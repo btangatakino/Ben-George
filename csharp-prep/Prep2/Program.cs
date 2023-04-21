@@ -40,7 +40,7 @@ class Program
         }
         else
         {
-            Console.WriteLine("Don't give up! Try again.");
+            Console.WriteLine("Don't give up! Try again!");
         }
         
     }
