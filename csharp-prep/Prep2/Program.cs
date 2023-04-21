@@ -4,29 +4,43 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("What is you grade in %? ");
-        string gradeInPercentage = Console.ReadLine();
-        int number = int.Parse(gradeInPercentage);
+        Console.Write("What is you grade in percentange? ");
+        string response = Console.ReadLine();
+        int percentage = int.Parse(response);
 
-        if (number < 60)
+        string grade = "";
+
+        if (percentage >= 90)
         {
-            Console.WriteLine("Your grade is F");
+            grade = "A";
         }
-        else if (number >= 60 && number < 70)
+
+        else if (percentage >= 80)
         {
-            Console.WriteLine("Your grade is D");
+            grade = "B";
         }
-        else if (number >=70 && number < 80)
+        else if (percentage >= 70)
         {
-            Console.WriteLine("Your grade is C");
+            grade = "C";
         }
-        else if (number >=80 && number < 90)
+        else if (percentage >= 70)
         {
-            Console.WriteLine("Your grade is B");
+            grade = "D";
         }
         else
         {
-            Console.WriteLine("Your grade is A");
+            grade = "F";
+        }
+
+        Console.WriteLine($"Your grade is: {grade}");
+
+        if (percentage <= 70);
+        {
+            Console.WriteLine("You have passed. Congratulations!");
+        }
+        else
+        {
+            Console.WriteLine("Don't give up! Try again.");
         }
         
     }
