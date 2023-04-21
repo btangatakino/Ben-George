@@ -18,6 +18,10 @@ class Program
         }
         else if (number >=70 && number < 80)
         {
+            Console.WriteLine("Your grade is C");
+        }
+        else if (number >=80 && number < 90)
+        {
             Console.WriteLine("Your grade is B");
         }
         else
