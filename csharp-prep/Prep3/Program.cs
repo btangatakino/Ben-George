@@ -39,7 +39,7 @@ class Program
                 count++;                
             }
             Console.WriteLine($"Number of guesses: {count}");
-            Console.Write("Do you want to continue?" );
+            Console.Write("Do you want to continue? ");
             response4 = Console.ReadLine();
         }
         /*Random randomNumber = new Random();
