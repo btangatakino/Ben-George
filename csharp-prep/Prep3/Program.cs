@@ -16,6 +16,7 @@ class Program
             int guess = int.Parse(response2);*/
 
             int guess = -1;
+            int count = 0;
                     
             while (guess != magicNumber)
             {
@@ -35,7 +36,9 @@ class Program
                 {
                     Console.WriteLine("You guessed it!");
                 }
+                count++;                
             }
+            Console.WriteLine($"Number of guesses: {count}");
             Console.Write("Do you want to continue?" );
             response4 = Console.ReadLine();
         }
