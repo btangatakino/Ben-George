@@ -31,6 +31,6 @@ class Program
         myResume._jobs.Add(job1);
         myResume._jobs.Add(job2);
 
-        myResume.DisplayJobDetails();
+        myResume.Display();
     }
 }
