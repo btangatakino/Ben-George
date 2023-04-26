@@ -16,11 +16,11 @@ class Program
         //create another Job instance named job2
         Job job2 = new Job();
 
-        //set member variable to job2
+        //setting member variable to job2
         job2._jobTitle = "Manager";
-        job1._company = "Apple";
-        job1._startYear = 2022;
-        job1._endYear = 2023;
+        job2._company = "Apple";
+        job2._startYear = 2022;
+        job2._endYear = 2023;
 
         //create new Resume instance named myResume
         Resume myResume = new Resume();
@@ -31,6 +31,6 @@ class Program
         myResume._jobs.Add(job1);
         myResume._jobs.Add(job2);
 
-        myResume.Display();
+        myResume.DisplayJobDetails();
     }
 }
