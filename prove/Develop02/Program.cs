@@ -14,7 +14,7 @@ class Program
         class Journal
         {
             //some method here
-
+            private List<Entry> _entries = new List<Entry>();
         }
 
         class Entry
