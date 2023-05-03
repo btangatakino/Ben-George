@@ -1,7 +1,7 @@
 using System;
 
 /*This program is to help people record events of their day
-by supplyinf prompts and then saving their responses along 
+by supplying prompts and then saving their responses along 
 with the question and the date to a file */
 
 class Program
