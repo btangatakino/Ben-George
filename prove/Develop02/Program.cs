@@ -11,18 +11,18 @@ class Program
     {
         Console.WriteLine("Hello Develop02 World!");
 
-        public class Journal
+        class Journal
         {
             //some method here
 
         }
 
-        public class Entry
+        class Entry
         {
             //some methods here
         }
 
-        public class PromptGenerator
+        class PromptGenerator
         {
             //some methods here
         }
