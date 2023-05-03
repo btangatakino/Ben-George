@@ -8,5 +8,21 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Hello Develop02 World!");
+
+        public class Journal
+        {
+            //some method here
+            
+        }
+
+        public class Entry
+        {
+            //some methods here
+        }
+
+        public class PromptGenerator
+        {
+            //some methods here
+        }
     }
 }
