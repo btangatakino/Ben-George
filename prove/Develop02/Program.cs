@@ -11,10 +11,14 @@ class Journal
     {
         DisplayWelcomeMessage();
 
-        //string _userInput = PromptUserInput();
-        string _fileName;
-        string _randomPrompt;
-        string _promptResponse;
+        int _userInput = PromptUserInput();
+        //String _fileName;
+        //string _randomPrompt;
+        //string _promptResponse;
+
+        /*Entry myEntry = new Entry();
+
+        myEntry.Display();*/
     }
     static void DisplayWelcomeMessage()
     {
@@ -32,10 +36,30 @@ class Journal
     {
         Console.WriteLine("What would you like to do?");
         int userInput = int.Parse(Console.ReadLine());
-        return userInput;
-    }
-
+        //return userInput;
     
+        if(userInput == 1)
+        {
+            Console.WriteLine("You have selected the Write option");
+        }
+        else if(userInput == 2)
+        {
+            Console.WriteLine("You have selected the Display option");
+        }
+        else if(userInput == 3)
+        {
+            Console.WriteLine("You have selected the Load option");
+        }
+        else if(userInput == 4)
+        {
+            Console.WriteLine("You have selected the Save option");
+        }
+        else if(userInput == 5)
+        {
+            Console.WriteLine("You have selected the Quit option");
+        }
+        return userInput;
+    }    
 }      
 
         /*
