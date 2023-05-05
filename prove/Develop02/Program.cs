@@ -34,7 +34,10 @@ class Journal
         int userInput = int.Parse(Console.ReadLine());
         return userInput;
     }
-}
+
+    
+}      
+
         /*
         //some method here
         private List<Entry> _entries = new List<Entry>();
