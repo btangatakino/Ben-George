@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 /*This program is to help people record events of their day
 by supplying prompts and then saving their responses along 
@@ -23,7 +24,7 @@ class Journal
         myInput._dateOfEntry = "29 April 1970";
         myInput._promptQuestion = "What interesting event happened to you on that day?";
         myInput._promptResponse = "I was born on that day.";
-        //myInput.Display();
+        myInput.Display();
     }
     static void DisplayWelcomeMessage()
     {
@@ -50,7 +51,7 @@ class Journal
         else if(userInput == 2)
         {
             Console.WriteLine("You have selected the Display option");
-            myInput.Display();
+            //myInput.Display();
         }
         else if(userInput == 3)
         {
