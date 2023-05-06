@@ -16,9 +16,12 @@ class Journal
         //string _randomPrompt;
         //string _promptResponse;
 
-        /*Entry myEntry = new Entry();
+        Entry myEntry = new Entry();
 
-        myEntry.Display();*/
+        myEntry._dateOfEntry = "29 April 1970";
+        myEntry._promptQuestion = "What interesting event happened to you on that day?";
+        myEntry._promptResponse = "I was born on that day.";
+        myEntry.Display();
     }
     static void DisplayWelcomeMessage()
     {
@@ -58,8 +61,27 @@ class Journal
         {
             Console.WriteLine("You have selected the Quit option");
         }
-        return userInput;
-    }    
+        return userInput;        
+    }
+
+    public class Entry
+    {
+        //public string _listOfEntries;
+
+        //public string _dateOfEntry = "29th April 1970";
+        public string _dateOfEntry;
+
+        //public string _promptResponse = "I was born on that day.";
+        public string _promptResponse;
+
+        //public string _promptQuestion = "What interesting event happened to you on that day?" ;
+        public string _promptQuestion;
+        
+        public void Display()
+        {
+            Console.WriteLine($"{_dateOfEntry} {_promptQuestion} {_promptResponse}");
+        }
+    }
 }      
 
         /*
