@@ -1,6 +1,6 @@
 using System;
 
-public class Entry
+public class Write
 {
     //public string _listOfEntries;
 
