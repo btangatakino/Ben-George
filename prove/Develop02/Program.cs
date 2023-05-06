@@ -15,13 +15,15 @@ class Journal
         //String _fileName;
         //string _randomPrompt;
         //string _promptResponse;
+        
+        //public List<Entry> _myEntry = new List<Entry>();
 
-        Entry myEntry = new Entry();
+        Input myInput = new Input();
 
-        myEntry._dateOfEntry = "29 April 1970";
-        myEntry._promptQuestion = "What interesting event happened to you on that day?";
-        myEntry._promptResponse = "I was born on that day.";
-        //myEntry.Display();
+        myInput._dateOfEntry = "29 April 1970";
+        myInput._promptQuestion = "What interesting event happened to you on that day?";
+        myInput._promptResponse = "I was born on that day.";
+        //myInput.Display();
     }
     static void DisplayWelcomeMessage()
     {
@@ -48,7 +50,7 @@ class Journal
         else if(userInput == 2)
         {
             Console.WriteLine("You have selected the Display option");
-            myEntry.Display();
+            myInput.Display();
         }
         else if(userInput == 3)
         {
@@ -65,7 +67,7 @@ class Journal
         return userInput;        
     }
 
-    public class Entry
+    public class Input
     {
         //public string _listOfEntries;
 
