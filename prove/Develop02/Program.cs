@@ -21,7 +21,7 @@ class Journal
         myEntry._dateOfEntry = "29 April 1970";
         myEntry._promptQuestion = "What interesting event happened to you on that day?";
         myEntry._promptResponse = "I was born on that day.";
-        myEntry.Display();
+        //myEntry.Display();
     }
     static void DisplayWelcomeMessage()
     {
@@ -48,6 +48,7 @@ class Journal
         else if(userInput == 2)
         {
             Console.WriteLine("You have selected the Display option");
+            myEntry.Display();
         }
         else if(userInput == 3)
         {
