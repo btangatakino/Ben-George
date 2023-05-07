@@ -25,7 +25,21 @@ class Journal
         myInput._promptQuestion = "What interesting event happened to you on that day?";
         myInput._promptResponse = "I was born on that day.";
         myInput.Display();
-    }
+
+        /*List<String> _prompts = new List<String>();
+
+        _prompts.Add("What is one memorable thing that happened today?");
+        _prompts.Add("Name an interesting person you met today and how?");
+        _prompts.Add("Share an experience of Service today.");
+        _prompts.Add("Did you speak kind words to someone today?");
+        _prompts.Add("How have you seen the Lord's hand in you life today?");
+
+        foreach(String item in _prompts)
+        {
+            Console.WriteLine(item);
+        }
+        Console.ReadKey();*/
+    } 
     static void DisplayWelcomeMessage()
     {
         Console.WriteLine("Welcome to the Journal Program!");
@@ -67,8 +81,9 @@ class Journal
         }
         return userInput;        
     }
+}
 
-    public class Input
+    /*public class Input
     {
         //public string _listOfEntries;
 
