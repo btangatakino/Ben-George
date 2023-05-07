@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-public class Input
+public class Entry
 {
     //public string _listOfEntries;
 
