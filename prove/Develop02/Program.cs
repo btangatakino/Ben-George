@@ -5,26 +5,29 @@ using System.Collections.Generic;
 by supplying prompts and then saving their responses along 
 with the question and the date to a file */
 
-class Journal
+class Program
+
 {
     //adding comments
     static void Main(string[] args)
     {
-        DisplayWelcomeMessage();
+        Journal journal = new Journal();
 
-        int _userInput = PromptUserInput();
+        journal.displayWelcomeMessage();
+
+        //int _userInput = promptUserInput();
         //String _fileName;
         //string _randomPrompt;
         //string _promptResponse;
         
         //public List<Entry> _myEntry = new List<Entry>();
 
-        Input myInput = new Input();
+        Entry myEntry = new Entry();
 
-        myInput._dateOfEntry = "29 April 1970";
-        myInput._promptQuestion = "What interesting event happened to you on that day?";
-        myInput._promptResponse = "I was born on that day.";
-        myInput.Display();
+        myEntry._dateOfEntry = "29 April 1970";
+        myEntry._promptQuestion = "What interesting event happened to you on that day?";
+        myEntry._promptResponse = "I was born on that day.";
+        myEntry.Display();
 
         /*List<String> _prompts = new List<String>();
 
@@ -37,10 +40,10 @@ class Journal
         foreach(String item in _prompts)
         {
             Console.WriteLine(item);
-        }
-        Console.ReadKey();*/
+        }*/
+        Console.ReadKey();
     } 
-    static void DisplayWelcomeMessage()
+    /*static void DisplayWelcomeMessage()
     {
         Console.WriteLine("Welcome to the Journal Program!");
         Console.WriteLine("Please select one of the following choices:");
@@ -80,7 +83,7 @@ class Journal
             Console.WriteLine("You have selected the Quit option");
         }
         return userInput;        
-    }
+    }*/
 }
 
     /*public class Input
