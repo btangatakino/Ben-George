@@ -7,6 +7,7 @@ namespace Tutlane
     {
        private string brand;
        private string model;
+       private string systemType;
        public string Brand
        {
           get { return brand; }
@@ -17,10 +18,16 @@ namespace Tutlane
           get { return model; }
           set { model = value; }
        }
+       public string SystemType
+       {
+         get { return systemType; }
+         set { systemType = value; }
+       }
        public void LaptopDetails()
        {
           Console.WriteLine("Brand: " + Brand);
           Console.WriteLine("Model: " + Model);
+          Console.WriteLine("SystemType: " + SystemType);
        }
        public void LaptopKeyboard()
        {
@@ -42,7 +49,7 @@ namespace Tutlane
           Laptop l = new Laptop();
           l.Brand = "Dell";
           l.Model = "Inspiron 14R";
-          l.LaptopDetails();
+          l.SystemType = "x64-base PC";
           Console.WriteLine("\nPress Enter Key to Exit..");
           Console.ReadLine();
        }
