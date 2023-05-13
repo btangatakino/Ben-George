@@ -1,8 +1,14 @@
 using System;
-
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 public class Journal
 {
-    public void displayWelcomeMessage()
+    public static List<Entry> _entries = new List<Entry>();
+
+    public void DisplayWelcomeMessage()
     {
         Console.WriteLine("Welcome to the Journal Program!");
         Console.WriteLine("Please select one of the following choices:");
@@ -10,38 +16,55 @@ public class Journal
         Console.WriteLine("2. Display");
         Console.WriteLine("3. Load");
         Console.WriteLine("4. Save");
-        Console.WriteLine("5. Quit");
-        
+        Console.WriteLine("5. Quit");        
     }
 
-    public int promptUserInput()
+public static int PromptUserInput()
+{
+    Console.WriteLine("What would you like to do?");
+    int userInput;
+    while (!int.TryParse(Console.ReadLine(), out userInput))
     {
-        Console.WriteLine("What would you like to do?");
-        int userInput = int.Parse(Console.ReadLine());
-        Console.ReadLine();
-        //return userInput;
-    
-        if(userInput == 1)
-        {
-            Console.WriteLine("You have selected the Write option");
-        }
-        else if(userInput == 2)
-        {
-            Console.WriteLine("You have selected the Display option");
-            //myInput.Display();
-        }
-        else if(userInput == 3)
-        {
-            Console.WriteLine("You have selected the Load option");
-        }
-        else if(userInput == 4)
-        {
-            Console.WriteLine("You have selected the Save option");
-        }
-        else if(userInput == 5)
-        {
-            Console.WriteLine("You have selected the Quit option");
-        }
-        return userInput;        
+        Console.WriteLine("Invalid input. Please enter a valid integer.");
     }
+
+    switch (userInput)
+    {
+        case 1:
+            Console.WriteLine("Need to call the Entry or Write Method");
+            break;
+
+        case 2:
+            Console.WriteLine("Need to call the Display Method.");
+            break;
+
+        case 3:
+            Console.WriteLine("Need to call the Load Method");
+            break;
+
+        case 4:
+            Console.WriteLine("Need to call the Save Method");
+            break;
+
+        default:
+            Environment.Exit(0);
+            break;
+    }
+
+    return userInput;
+}
+    private void GeneratePrompt()
+    {
+        throw new NotImplementedException();
+    }
+
+    /*public static void  SaveToFile()
+    {
+        string fileName = "myFile.txt";
+
+        using (StreamWriter outputFile = new StreamWriter(fileName))
+        {
+            outputFile.WriteLine($"{fileName}");
+        }
+    }*/
 }
