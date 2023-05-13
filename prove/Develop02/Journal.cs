@@ -10,7 +10,13 @@ public class Journal
 
     public void DisplayWelcomeMessage()
     {
-        Console.WriteLine("Welcome to the Journal Program!");
+        Entry p1 = new Entry();
+        p1._dateOfEntry = "29th April 1970";
+        p1._entryPrompt = "What happened on this day?";
+    }
+}
+    
+    /*    Console.WriteLine("Welcome to the Journal Program!");
         Console.WriteLine("Please select one of the following choices:");
         Console.WriteLine("1. Write");
         Console.WriteLine("2. Display");
@@ -57,8 +63,9 @@ public static int PromptUserInput()
     {
         throw new NotImplementedException();
     }
-
-    /*public static void  SaveToFile()
+    List<Entry> entries = new List<Entry>();
+    entries
+    public static void  SaveToFile(List<Person> people)
     {
         string fileName = "myFile.txt";
 
@@ -66,5 +73,5 @@ public static int PromptUserInput()
         {
             outputFile.WriteLine($"{fileName}");
         }
-    }*/
-}
+    }
+}*/
