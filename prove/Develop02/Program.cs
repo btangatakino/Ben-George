@@ -8,142 +8,157 @@ using System.Threading.Tasks;
 /*This program is to help people record events of their day
 by supplying prompts and then saving their responses along 
 with the question and the date to a file */
+public class Entry
+{
+    public string _dateTimeEntry;
 
-class Program
+    public string _entryPrompt;
+
+    public string _entryResponse;
+
+    public string DateTimeEntry()
+    {
+        //set date and time
+        DateTime timeOfEntry = DateTime.Now;
+        string dateTime = timeOfEntry.ToShortDateString();
+        return dateTime;
+    }
+
+    public void DisplayUserEntry()
+    {
+        Console.WriteLine($"{_dateTimeEntry} {_entryPrompt} {_entryResponse}");
+    }
+}
+
+public class PromptGenerator
+{
+    List<string> _promptsList = new List<string>
+    {
+        "What is one memorable thing that happened today?",
+        "Share an experience of Service today.",
+        "Did you speak kind words to someone today?",
+        "How have you seen the Lord's hand in your life today?",
+        "Name an interesting person you met today and how?"
+    };
+    public void DisplayPrompts()
+    {
+        Console.WriteLine($"{_promptsList}");
+    }
+    Random ran = new Random();
+    public void GeneratePrompt()
+    {
+        int myIndex = ran.Next(_promptsList.Count);         
+        Console.WriteLine(_promptsList[myIndex]);
+        Console.ReadLine();
+    }    
+}
+public class Journal
+{
+    List<Entry> _entries = new List<Entry>();
+
+    public void DisplayEntryList()
+    {
+        foreach (Entry entry in _entries)
+        {
+            entry.DisplayUserEntry();
+        }
+    }
+        public void SaveToFile()
+    {
+        List<Entry> entry = new List<Entry>();
+        Console.WriteLine("Saviing to file...");
+        Console.WriteLine("Enter a filename for your entry.");
+
+        string filename = Console.ReadLine();
+        using (StreamWriter outputFile = new StreamWriter(filename))
+        {
+            foreach (Entry ent in entry)
+            {
+                outputFile.WriteLine("{ent}");
+            }
+        }
+    }
+    /*public void List<Entry> ReadFromFile()
+    {
+        List<Entry> entry = new List<Entry>();
+        string filename = "journal.txt";
+
+        return entry;
+    }*/
+    
+}
+partial class Program
 {
     static void Main(string[] args)
     {
-        List<Entry> _entries = new List<Entry>();
-
-        Journal journal = new Journal();
-
-        journal.DisplayWelcomeMessage();
-       
-
-        //int _userInput = promptUserInput();
-        //String _fileName;
-        //string _randomPrompt;
-        //string _promptResponse;
-        
-        //public List<Entry> _myEntry = new List<Entry>();
-
-        Entry myEntry = new Entry();
-
-        myEntry._dateOfEntry = "29 April 1970";
-        myEntry._entryPrompt = "What interesting event happened to you on that day?";
-        myEntry._entryResponse = "I was born on that day.";
-        //myEntry.Display();
-    }
-}
-
-        /*List<string> _prompts = new List<string>();
-
-        _prompts.Add("What is one memorable thing that happened today?");
-        _prompts.Add("Name an interesting person you met today and how?");
-        _prompts.Add("Share an experience of Service today.");
-        _prompts.Add("Did you speak kind words to someone today?");
-        _prompts.Add("How have you seen the Lord's hand in you life today?");
-
-        foreach(String item in _prompts)
+        PromptGenerator genPrompt = new PromptGenerator();
+        genPrompt.DisplayPrompts();
+    
+        static void DisplayWelcomeMessage()
         {
-            Console.WriteLine(item);
-        }
-        Console.ReadKey();
-
-        PromptGenerator();
-    }
-
-    private static void PromptGenerator()
-    {
-        throw new NotImplementedException();
-    }
-    /*static void DisplayWelcomeMessage()
-{
-   Console.WriteLine("Welcome to the Journal Program!");
-   Console.WriteLine("Please select one of the following choices:");
-   Console.WriteLine("1. Write");
-   Console.WriteLine("2. Display");
-   Console.WriteLine("3. Load");
-   Console.WriteLine("4. Save");
-   Console.WriteLine("5. Quit");
-
-}
-
-static int PromptUserInput()
-{
-   Console.WriteLine("What would you like to do?");
-   int userInput = int.Parse(Console.ReadLine());
-   //return userInput;
-
-   if(userInput == 1)
-   {
-       Console.WriteLine("You have selected the Write option");
-   }
-   else if(userInput == 2)
-   {
-       Console.WriteLine("You have selected the Display option");
-       //myInput.Display();
-   }
-   else if(userInput == 3)
-   {
-       Console.WriteLine("You have selected the Load option");
-   }
-   else if(userInput == 4)
-   {
-       Console.WriteLine("You have selected the Save option");
-   }
-   else if(userInput == 5)
-   {
-       Console.WriteLine("You have selected the Quit option");
-   }
-   return userInput;        
-}*/
-    /*public class Input
-    {
-        //public string _listOfEntries;
-
-        //public string _dateOfEntry = "29th April 1970";
-        public string _dateOfEntry;
-
-        //public string _promptResponse = "I was born on that day.";
-        public string _promptResponse;
-
-        //public string _promptQuestion = "What interesting event happened to you on that day?" ;
-        public string _promptQuestion;
-        
-        public void Display()
-        {
-            Console.WriteLine($"{_dateOfEntry} {_promptQuestion} {_promptResponse}");
-        }
-    }
-}      
-
-        /*
-        //some method here
-        private List<Entry> _entries = new List<Entry>();
+            Console.WriteLine("Welcome to the Journal Program!");
+            Console.WriteLine("Please select one of the following choices:");
+            Console.WriteLine("1. Write");
+            Console.WriteLine("2. Display");
+            Console.WriteLine("3. Load");
+            Console.WriteLine("4. Save");
+            Console.WriteLine("5. Quit");
         }
 
-        public static void SaveToFile(List<Entry> _entries)
-        {
-            string filename ="_entries.txt";
-
-            using (StreamWriter outputFile = new StreamWriter(filename))
+        static int PromptUserInput()
             {
-                foreach (Entry entry in _entries)
-                {
-                    outputFile Writeline(entry)
-                }
+            Console.WriteLine("What would you like to do?");
+            int userInput;
+            while (!int.TryParse(Console.ReadLine(), out userInput))
+            {
+                Console.WriteLine("Invalid input. Please enter a valid integer.");
             }
-        }
+            switch (userInput)
+            {
+            case 1:
+                Console.WriteLine("Need to call the Entry or Write Method");
+                //The program will select from a number of random 
+                //prompts and display one to the user
+                PromptGenerator gPrompt = new PromptGenerator();
+                gPrompt.GeneratePrompt();
+                string promptResponse = Console.ReadLine();
+                Entry entry = new Entry();
+                string date = entry.DateTimeEntry();
+                //entry._entryPrompt = gprompt.GeneratePrompt();
+                entry._entryResponse = promptResponse;
+                entry._dateTimeEntry = date;
 
-        class Entry
-        {
-            //some methods here
-        }
+                Journal journalEntry = new Journal();
+                //journalEntry._entries.Add(entry);
+                break;
 
-        class PromptGenerator
-        {
-            //some methods here
+            case 2:
+                Console.WriteLine("Need to call the Display Method.");
+                //The program will display all the entries inside the journal
+                //Journal journalEntry = new Journal();
+                
+                Journal journal = new Journal();
+                journal.DisplayEntryList();
+                break;
+
+            case 3:
+                Console.WriteLine("Need to call the Load Method");
+                break;
+
+            case 4:
+                Console.WriteLine("Need to call the Save Method");
+                //journal.SaveToFile();
+                break;
+
+            default:
+                Console.WriteLine("Goodbye!");
+                Environment.Exit(0);
+                break;
+            }
+
+            return userInput;
         }
+        DisplayWelcomeMessage();
+        PromptUserInput();
     }
-}*/
+}

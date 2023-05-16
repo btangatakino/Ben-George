@@ -1,20 +1,27 @@
-using System;
+/*using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 public class Entry
 {
-    public string _dateOfEntry;
+    public string _dateTimeEntry;
 
     public string _entryPrompt;
 
     public string _entryResponse;
 
-    public void Display()
+    public string DateTimeEntry()
     {
-        Console.WriteLine($"{_dateOfEntry} {_entryPrompt} {_entryResponse}");
+        //set date and time
+        DateTime timeOfEntry = DateTime.Now;
+        string dateTime = timeOfEntry.ToShortDateString();
+        return dateTime;
+    }
+
+    public void DisplayUserEntry()
+    {
+        Console.WriteLine($"{_dateTimeEntry} {_entryPrompt} {_entryResponse}");
     }
 }
