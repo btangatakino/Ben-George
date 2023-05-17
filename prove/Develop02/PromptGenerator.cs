@@ -1,4 +1,4 @@
-/*using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,23 +6,19 @@ using System.Text;
 using System.Threading.Tasks;
 public class PromptGenerator
 {
-    List<string> _promptsList = new List<string>()
+    public string _displayPrompt;
+    public void RandomPrompt()
     {
-        "What is one memorable thing that happened today?",
-        "Share an experience of Service today.",
-        "Did you speak kind words to someone today?",
-        "How have you seen the Lord's hand in your life today?",
-        "Name an interesting person you met today and how?"
-    };
+        List<string> promptsList = new List<string>();
+        promptsList.Add("What is one memorable thing that happened today?");
+        promptsList.Add("Share an experience of Service today.");
+        promptsList.Add("Did you speak kind words to someone today?");
+        promptsList.Add("How have you seen the Lord's hand in your life today?");
+        promptsList.Add("Name an interesting person you met today and how?");
 
-    Random ran = new Random();
-
-    public void GeneratePrompt()
-    {
-        int myIndex = ran.Next(_promptsList.Count);
-         
-        Console.WriteLine(_promptsList[myIndex]);
-        Console.WriteLine("{0}", _promptsList.ElementAt(myIndex));
-        Console.ReadKey();
+        Random random = new Random();
+        int myIndex = random.Next(promptsList.Count);
+        _displayPrompt = promptsList[myIndex];
+        Console.WriteLine(_displayPrompt);
     }
 }
