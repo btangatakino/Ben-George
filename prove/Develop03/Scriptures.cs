@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
 
 public class Scriptures
 {
@@ -10,11 +13,13 @@ public class Scriptures
         _reference = reference;
         _text = text;
     
+    List<Scriptures> scripture = new List<Scriptures>();
+
     Scriptures script1 = new Scriptures(reference, text);
     Scriptures script2 = new Scriptures(reference, text);
     Scriptures script3 = new Scriptures(reference, text);
-    }
 
+    }
     //method to hide words
     public void HideWords()
     {
