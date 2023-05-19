@@ -24,7 +24,7 @@ public class Journal
         {
             foreach (Entry entry in _entries)
             {
-                outputFile.WriteLine($"{entry._dateTimeEntry}, {entry._entryPrompt}, {entry._entryResponse}");
+                entry.DisplayUserEntry();
             }
         }
     }

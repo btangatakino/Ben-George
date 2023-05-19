@@ -24,4 +24,9 @@ public class Entry
     {
         Console.WriteLine($"{_dateTimeEntry} {_entryPrompt} {_entryResponse}");
     }
+
+    public string GetSaveFormat()
+    {
+        return $"{this._dateTimeEntry}, {this._entryPrompt}, {this._entryResponse}";
+    }
 }
