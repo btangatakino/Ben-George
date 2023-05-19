@@ -36,9 +36,9 @@ public class Journal
         {
             string[] parts = line.Split(",");
 
-            string savedEntry = parts[1];
+            string savedEntry = parts[2];
             // Pulls the prompt used to prompt the entry and store it in a variable
-            Entry entry = new Entry(parts[2], savedEntry.Replace("|", ","));
+            Entry entry = new Entry(parts[1], savedEntry.Replace("|", ","));
             // pulls the date from the entry, and stores it in a variable
             entry._dateTimeEntry = parts[0];
             // adds the entries to the list. 
