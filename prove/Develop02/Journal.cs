@@ -10,20 +10,11 @@ public class Journal
 
     public void DisplayEntry()
     {
-    foreach (Entry entry in _entries)
-    {
-        entry.DisplayUserEntry();
-    }
-    }
-    /*
-    public void DisplayEntryList()
-    {
         foreach (Entry entry in _entries)
         {
-        Console.WriteLine($"{entry._dateTimeEntry}, {entry._entryPrompt}, {entry._entryResponse}");
+            entry.DisplayUserEntry();
         }
-    }*/
-    
+    }
     public void SaveToFile(string filename)
     {
         Console.WriteLine("Saviing to file...");
