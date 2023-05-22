@@ -44,7 +44,7 @@ class Program
                     break;
 
                 case "2":                    
-                    journal.DisplayEntryList();
+                    journal.DisplayEntry();
                     break;
 
                 case "3":
