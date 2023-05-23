@@ -23,7 +23,7 @@ namespace EncapsulationDemo
     }
     class Program
     {
-        public static void Main()
+        public static void Main(string[] args)
         {
             try
             {
@@ -31,7 +31,6 @@ namespace EncapsulationDemo
                 //cannot access the Amount Variable directly
                 //bank.Amount = -50; --> Complie Time Error
                 bank.SetAmount(10);
-                Console.ReadKey();
                 Console.WriteLine(bank.GetAmount());
             }
             catch(Exception ex)
