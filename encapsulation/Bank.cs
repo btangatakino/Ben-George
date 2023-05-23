@@ -29,8 +29,9 @@ namespace EncapsulationDemo
             {
                 Bank bank = new Bank();
                 //cannot access the Amount Variable directly
-                //bank.Amount = 50; --> Complie Time Error
+                //bank.Amount = -50; --> Complie Time Error
                 bank.SetAmount(10);
+                Console.ReadKey();
                 Console.WriteLine(bank.GetAmount());
             }
             catch(Exception ex)
