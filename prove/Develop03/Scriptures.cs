@@ -5,37 +5,74 @@ using System.Text;
 
 public class Scriptures
 {
-    private List<Word> _script = new List<Word>();
+    private List<Word> _scripts;
     //private string _reference;
-    private string _text;
+    private Reference _reference;
 
-    public Scriptures()
+    //private string text;
+    private string text = "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.";
+    
+    public Scriptures(){}
+
+    public Scriptures(string book, int chapter, int verse, int endVerse, string text)
     {
-        _text = "For behold, this is my work and my glory, to bring to pass the immortality and eternal life of man.";
+        _reference = new Reference(book, chapter, verse, endVerse);
+        List<Word> scripts = new List<Word>();
+
+        }
+    public void Display()
+    {
+        /*Console.WriteLine($"{_reference}");
+        string[] splitText = text.Split(' ');
+        foreach (string word in splitText)
+        {
+            Console.Write(word);
+            _scripts.Add(new Word(word));
+        }*/
     }
-
-    public Scriptures(string text)
+    public void GetText()
     {
-        _text = text.Replace(",", "|");
+        Console.WriteLine($"{_reference}");
+        string[] splitText = text.Split(' ');
+        foreach (string word in splitText)
+        {
+            Console.Write(word + " ");
+            /*_scripts.Add(Word(word));
+            Console.Write($"{_scripts}");*/
+        }
+    }
+}
+    /*internal bool GetText()
+    {
+        throw new NotImplementedException();
+    }
+}
+    /*public void GetText()
+    {
+        //Console.WriteLine($"{String.Join(" ", _script)}");
+        foreach (Word words in _words)
+        {
+            Console.WriteLine(words);
+        }
+        //Console.WriteLine($"{_script}");
+    }
+}
+        
+        
+        /*_text = text;
         text = "For behold, this is my work and my glory, to bring to pass the immortality and eternal life of man.";
         string[] words = text.Split(' ');
-        foreach (String word in words)
+        foreach (string word in words)
         {
             Word w = new Word(word);
             _script.Add(w);
             Console.WriteLine(word);
-        }
-    }
+        }*/
+    
     /*public string GetVerse()
     {
         return ($"{_script}");
     }*/
-    public string GetText()
-    {
-        return ($"{_text}");
-    }
-}
-
     /*public Scriptures()
     {
             

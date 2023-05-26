@@ -1,7 +1,5 @@
 using System;
 
-namespace EncapsulationDemo
-{
     public class Bank
     {
         private int Amount;
@@ -29,8 +27,14 @@ namespace EncapsulationDemo
             {
                 Bank bank = new Bank();
                 //cannot access the Amount Variable directly
-                //bank.Amount = -50; --> Complie Time Error
+                //bank.Amount = 50;// --> 'Bank.Amount' is  inaccessble due to its protection level
+                
+                //setting Positive Value
                 bank.SetAmount(10);
+                Console.WriteLine(bank.GetAmount());
+
+                //setting Negative Value
+                bank.SetAmount(-10);
                 Console.WriteLine(bank.GetAmount());
             }
             catch(Exception ex)
@@ -40,4 +44,3 @@ namespace EncapsulationDemo
             Console.ReadKey();
         }   
     }
-}

@@ -8,30 +8,42 @@ public class Reference
     private string _book;
     private int _chapter;
     private int _verse;
-    //private int _endVerse;
+    private int _endVerse;
 
-    Reference(string book, int chapter, int verse)
+    public Reference()
+    {
+    }
+
+    public Reference(string book, int chapter, int verse)
     {
         _book = book;
         _chapter = chapter;
         _verse = verse;
+        _endVerse = -1;
     }
 
-    /*Reference(string book, int chapter, int verse, int endVerse)
+    public Reference(string book, int chapter, int verse, int endVerse)
     {
         _book = book;
         _chapter = chapter;
         _verse = verse;
        _endVerse = endVerse;
-    }*/
+    }
 
-    public string GetReference()
+    public void GetReference()
     {
-        _book = "Moses";
-        _chapter = 1;
-        _verse = 39;
-        //_endVerse = 6;
+        _book = "Proverbs";
+        _chapter = 3;
+        _verse = 5;
+        _endVerse = 6;
 
-        return ($"{_book} {_chapter}:{_verse}");
+        if (_endVerse == -1)
+        {
+            Console.WriteLine($"{_book} {_chapter}:{_verse}");
+        }
+        else
+        {
+            Console.WriteLine($"{_book} {_chapter}: {_verse}-{_endVerse}");
+        }
     }
 }
