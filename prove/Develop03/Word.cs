@@ -15,20 +15,34 @@ public class Word
         _word = word;
         _isHidden = false;
     }
-
+    string word = @"Trust in the Lord with all thine heart, and lean not unto thine own understanding. 
+    In all thy ways acknowledge him, and he shall direct they path";
     //track if single word is shown or hidden
+
+    public Word(){}
 
     public void HideWords()
     {
         //set word is hidden
-        List<Word> visibleWords = GetVisibleWords();
-        if (visibleWords.Count == 0)
-            return;
-
-        Random random = new Random();
-        int randomIndex = random.Next(visibleWords.Count);
-        visibleWords[randomIndex].Hide();
-    }
+        string text = word;
+        string[] hideWords = word.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+        
+        Console.WriteLine(text);
+        foreach (string w in hideWords)
+        {
+            text = text.Replace(word, new string('_', word.Length));
+            Console.WriteLine(text);
+        }
+            /*do
+        {
+            Random random = new Random();
+        int myIndex = random.Next(text.Count);
+        text = splitText[myIndex];
+        Console.WriteLine(_scripts);
+        }while()
+        }*/
+        //Console.WriteLine(text);
+    }/*
 
     private List<Word> GetVisibleWords()
     {
@@ -39,10 +53,10 @@ public class Word
     {
         //logic if hidden then show __  if not hidden, then show the word
     }
-
+    
     public void GetWords()
     {
         Console.WriteLine($"{_word}");
-    }
+    }*/
 }
 

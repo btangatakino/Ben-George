@@ -11,7 +11,7 @@ class Program
         //ConsoleKeyInfo click;
         do
         {
-            Console.Clear();  
+            //Console.Clear();  
             //This part is working
             Reference reference = new Reference();
             reference.GetReference();
@@ -19,15 +19,19 @@ class Program
             //This part is working
             Scriptures scripture = new Scriptures();
             scripture.GetText();
-            Console.Clear();
+            //scripture.Display();
+
+            Word word1 = new Word();
+            //word1.HideWords();
             //scripture.GetText();
             //Console.WriteLine(scripture.GetText());
-
+            Console.WriteLine();
             Console.WriteLine("Press enter to continue or type 'quit' to finish:");
             //Console.ReadKey();
 
             //Console.Clear();
             userValue= Console.ReadLine();
+            Console.Clear();
             /*do
             {
                 Console.Clear();

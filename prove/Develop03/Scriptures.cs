@@ -22,24 +22,35 @@ public class Scriptures
         }
     public void Display()
     {
-        /*Console.WriteLine($"{_reference}");
-        string[] splitText = text.Split(' ');
-        foreach (string word in splitText)
-        {
-            Console.Write(word);
-            _scripts.Add(new Word(word));
-        }*/
-    }
-    public void GetText()
-    {
         Console.WriteLine($"{_reference}");
         string[] splitText = text.Split(' ');
         foreach (string word in splitText)
         {
-            Console.Write(word + " ");
-            /*_scripts.Add(Word(word));
-            Console.Write($"{_scripts}");*/
+            //Console.Write(word);
+            _scripts.Add(new Word(word));
+            //Console.WriteLine(_scripts);
         }
+    }
+    public void GetText()
+    {
+        string[] splitText = text.Split(' ');
+        foreach (string word in splitText)
+        {   //this part not working
+            Console.Write(word);
+            Console.WriteLine();
+            _scripts.Add(new Word(word));
+            Console.WriteLine($"{splitText}");
+        }/*
+
+        do
+        {
+            Random random = new Random();
+        int myIndex = random.Next(_scripts.Count);
+        _scripts = splitText[myIndex];
+        Console.WriteLine(_scripts);
+        }while()
+
+        List<Word> visibleWords = GetVisibleWords();*/
     }
 }
     /*internal bool GetText()
