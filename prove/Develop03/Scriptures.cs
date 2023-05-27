@@ -10,7 +10,8 @@ public class Scriptures
     private Reference _reference;
 
     //private string text;
-    private string text = "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.";
+    private string text = @"Trust in the Lord with all thine heart; and lean not unto thine own understanding.
+    In all thy ways acknowledge him, and he shall direct thy paths.";
     
     public Scriptures(){}
 
@@ -23,12 +24,12 @@ public class Scriptures
     public void Display()
     {
         Console.WriteLine($"{_reference}");
-        string[] splitText = text.Split(' ');
+        string[] splitText = text.Split (new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
         foreach (string word in splitText)
         {
             //Console.Write(word);
-            _scripts.Add(new Word(word));
-            //Console.WriteLine(_scripts);
+            //_scripts.Add(new Word(word));
+            Console.Write(word + " ");
         }
     }
     public void GetText()

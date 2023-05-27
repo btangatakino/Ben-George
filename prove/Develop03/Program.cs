@@ -18,13 +18,14 @@ class Program
 
             //This part is working
             Scriptures scripture = new Scriptures();
-            scripture.GetText();
-            //scripture.Display();
+            //scripture.GetText();
+            scripture.Display();
 
             Word word1 = new Word();
             //word1.HideWords();
             //scripture.GetText();
             //Console.WriteLine(scripture.GetText());
+            Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("Press enter to continue or type 'quit' to finish:");
             //Console.ReadKey();

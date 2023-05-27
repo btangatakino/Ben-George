@@ -15,8 +15,7 @@ public class Word
         _word = word;
         _isHidden = false;
     }
-    string word = @"Trust in the Lord with all thine heart, and lean not unto thine own understanding. 
-    In all thy ways acknowledge him, and he shall direct they path";
+    string word = "Trust in the Lord with all thine heart, and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct they path";
     //track if single word is shown or hidden
 
     public Word(){}
@@ -25,13 +24,13 @@ public class Word
     {
         //set word is hidden
         string text = word;
-        string[] hideWords = word.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+        string[] hideWords = text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
         
-        Console.WriteLine(text);
+        //Console.WriteLine(text);
         foreach (string w in hideWords)
         {
-            text = text.Replace(word, new string('_', word.Length));
-            Console.WriteLine(text);
+            //text = text.Replace(word, new string('_', word.Length));
+            Console.Write(w + " ");
         }
             /*do
         {
