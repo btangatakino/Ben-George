@@ -13,33 +13,33 @@ class Program
         {
             //Console.Clear();  
             //This part is working
-            Reference reference = new Reference();
+            Reference reference = new Reference("Proverbs", 3, 5, 6);
             reference.GetReference();
 
-            //This part is working
-            Scriptures scripture = new Scriptures();
+            //This part is working for scripture.Display
+            Scriptures scripture = new Scriptures(@"Trust in the Lord in the Lord with all thine heart; and lean not unto thine own understaing. In all thy ways, aknowledge him, and he shall direct thy paths.");
             //scripture.GetText();
-            scripture.Display();
+            //scripture.RandomVerse();
+            //scripture.Display();
 
             Word word1 = new Word();
             //word1.HideWords();
             //scripture.GetText();
+            scripture.GetVerse();
             //Console.WriteLine(scripture.GetText());
             Console.WriteLine();
-            Console.WriteLine();
             Console.WriteLine("Press enter to continue or type 'quit' to finish:");
-            //Console.ReadKey();
 
             //Console.Clear();
             userValue= Console.ReadLine();
             Console.Clear();
-            /*do
+            /*
+            do
             {
                 Console.Clear();
                 reference1.GetReference1();
                 scripture.GetText2();
-                Console.WriteLine("Press enter to continue or type 'quit' to finish:");
-                //click = Console.ReadKey();
+                click = Console.ReadKey();
             }
             while (click.Key != ConsoleKey.Enter);*/
 

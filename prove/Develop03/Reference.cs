@@ -32,10 +32,10 @@ public class Reference
 
     public void GetReference()
     {
-        _book = "Proverbs";
+        /*_book = "Proverbs";
         _chapter = 3;
         _verse = 5;
-        _endVerse = 6;
+        _endVerse = 6;*/
 
         if (_endVerse == -1)
         {
