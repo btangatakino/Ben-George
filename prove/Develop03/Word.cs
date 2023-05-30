@@ -15,7 +15,7 @@ public class Word
         _word = word;
         _isHidden = false;
     }
-    string word = "Trust in the Lord with all thine heart, and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct they path";
+    string word = "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct they paths.";
     //track if single word is shown or hidden
 
     public Word(){}
@@ -24,24 +24,26 @@ public class Word
     {
         //set word is hidden
         string text = word;
-        string[] hideWords = text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-        
+        char[] separator = {',', ' '};
+        string[] hideWords = text.Split(separator, StringSplitOptions.RemoveEmptyEntries);
+
+        int myRandomIndex = 0;
+        var results = new List<string>();
+        var r = new Random(DateTime.Now.Millisecond);
+
+        myRandomIndex = r.Next(hideWords.Length);
+        results.Add(hideWords[myRandomIndex]);
+        //Console.WriteLine(hideWords[myRandomIndex]); //this gets a random word from the scripture
+        Console.WriteLine(string.Join("", results));
+        Console.ReadKey();
         //Console.WriteLine(text);
-        foreach (string w in hideWords)
+        /*foreach (string w in hideWords)
         {
-            //text = text.Replace(word, new string('_', word.Length));
+            //text = text.Replace(_word, new string('_', _word.Length));
             Console.Write(w + " ");
-        }
-            /*do
-        {
-            Random random = new Random();
-        int myIndex = random.Next(text.Count);
-        text = splitText[myIndex];
-        Console.WriteLine(_scripts);
-        }while()
         }*/
-        //Console.WriteLine(text);
-    }/*
+    }
+}/*
 
     private List<Word> GetVisibleWords()
     {
@@ -56,6 +58,5 @@ public class Word
     public void GetWords()
     {
         Console.WriteLine($"{_word}");
-    }*/
-}
-
+    }
+}*/
