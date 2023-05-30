@@ -21,11 +21,12 @@ class Program
             //scripture.GetText();
             //scripture.RandomVerse();
             //scripture.Display();
-
-            Word word1 = new Word();
-            //word1.HideWords();
             //scripture.GetText();
-            scripture.GetVerse();
+            //scripture.GetVerse(); uncomment this
+            //Console.Clear();
+            Word word1 = new Word();
+            word1.HideWords();
+            //Console.Clear();
             //Console.WriteLine(scripture.GetText());
             Console.WriteLine();
             Console.WriteLine("Press enter to continue or type 'quit' to finish:");
