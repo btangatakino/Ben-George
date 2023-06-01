@@ -4,80 +4,128 @@ using System.IO;
 using System.Text;
 public class Scriptures
 {
-    private string randomWord;
-    //private List<Word> _scripts;
+   
+    Reference _reference;
     private string _verse;
-    private Reference _reference;
-    /*private string text = //@"Trust in the Lord with all thine heart; and lean not unto thine own understanding.
-    In all thy ways acknowledge him, and he shall direct thy paths.";
+    private Random rnd = new Random();
+    private List<Word> _words = new List<Word>();
+    public Reference Reference{
+        get{return _reference;}
+    }
     
-    public Scriptures(string text){}
 
     public Scriptures(string book, int chapter, int verse, int endVerse, string text)
     {
         _reference = new Reference(book, chapter, verse, endVerse);
-        List<Word> scripts = new List<Word>();
+        _verse = text;
+        string[] words = text.Split(" ");
+        foreach(string word in words)
+        {
+            Word wordObj = new Word(word);
+            _words.Add(wordObj);
+        }
 
-    }*/
-    public Scriptures(string verse)
+    }
+    public Scriptures(string book, int chapter, int verse, string text)
     {
-        _verse = verse;
+        _reference = new Reference(book, chapter, verse);
+        _verse = text;
+        string[] words = text.Split(" ");
+        foreach(string word in words)
+        {
+            Word wordObj = new Word(word);
+            _words.Add(wordObj);
+        }
+
     }
     public void GetVerse()
     {
         Console.WriteLine($"{_verse}");
     }
-}     
 
-    /*public void Display()
+    public void Display()
     {
-        Console.WriteLine($"{_ref}");erence
-        string[] splitText = text.Split (new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-        foreach (string word in splitText)
+        foreach(Word word in _words)
         {
-            //Console.Write(word);
-            //_scripts.Add(new Word(word));
-            Console.Write(word + " ");
-            //splitText.Add(word);
+            word.Display();
+            Console.Write(" ");
         }
     }
-    public void GetText()
+
+    public bool AllWordsHidden()
     {
-        string[] splitText = text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-        foreach (string word in splitText)
-        {   //this part not working
-            Console.Write(word + " ");
-            //Console.WriteLine();
-            //_scripts.Add(new Word(word));
-            //Console.WriteLine($"{splitText}");
-        }
-    
-    
-    public void RandomWord()
-    {
-        string[] splitText = text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-        
-        foreach (string randomWord in splitText)
+        foreach(Word word in _words)
         {
-        Random random = new Random();
-        int myIndex = random.Next(splitText.Count);
-        _scripts = splitText[myIndex];
-        Console.WriteLine(randomWord + " ");
+            if(!word.IsHidden)
+            {
+                return false;
+            }
         }
+        return true;
     }
-    public void RandomVerse()
+
+    public bool HideWord()
     {
+        //set word is hidden
         
-        Random random = new Random();
-        int myIndex = random.Next(versesList.Count);
-        randomWord = versesList[myIndex];
-        Console.WriteLine(randomWord);
+
+        int myRandomIndex = 0;
+        myRandomIndex = rnd.Next(_words.Count);
+        if(!_words[myRandomIndex].IsHidden)
+        {
+            _words[myRandomIndex].IsHidden = true; 
+            return true;
+        }
+        return false;
     }
+}
+
+/*public void Display()
+{
+    Console.WriteLine($"{_ref}");erence
+    string[] splitText = text.Split (new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+    foreach (string word in splitText)
+    {
+        //Console.Write(word);
+        //_scripts.Add(new Word(word));
+        Console.Write(word + " ");
+        //splitText.Add(word);
+    }
+}
+public void GetText()
+{
+    string[] splitText = text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+    foreach (string word in splitText)
+    {   //this part not working
+        Console.Write(word + " ");
+        //Console.WriteLine();
+        //_scripts.Add(new Word(word));
+        //Console.WriteLine($"{splitText}");
+    }
+
+
+public void RandomWord()
+{
+    string[] splitText = text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+
+    foreach (string randomWord in splitText)
+    {
+    Random random = new Random();
+    int myIndex = random.Next(splitText.Count);
+    _scripts = splitText[myIndex];
+    Console.WriteLine(randomWord + " ");
+    }
+}
+public void RandomVerse()
+{
+
+    Random random = new Random();
+    int myIndex = random.Next(versesList.Count);
+    randomWord = versesList[myIndex];
+    Console.WriteLine(randomWord);
+}
 }*/
 
-internal class extension
-{
-}
 /*do
 {
    Random random = new Random();

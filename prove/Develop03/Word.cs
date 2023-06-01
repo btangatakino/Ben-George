@@ -15,34 +15,20 @@ public class Word
         _word = word;
         _isHidden = false;
     }
-    string word = "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct they paths.";
-    //track if single word is shown or hidden
-
-    public Word(){}
-
-    public void HideWords()
+   
+    public void Display()
     {
-        //set word is hidden
-        string text = word;
-        char[] separator = {',', ' '};
-        string[] hideWords = text.Split(separator, StringSplitOptions.RemoveEmptyEntries);
-
-        int myRandomIndex = 0;
-        var results = new List<string>();
-        var r = new Random(DateTime.Now.Millisecond);
-
-        myRandomIndex = r.Next(hideWords.Length);
-        results.Add(hideWords[myRandomIndex]);
-        //Console.WriteLine(hideWords[myRandomIndex]); //this gets a random word from the scripture
-        //Console.WriteLine(string.Join("", results));
-        Console.ReadKey();
-        //Console.WriteLine(text);
-        foreach (string w in hideWords)
+        if(_isHidden)
         {
-            text = text.Replace(w, new string('_', hideWords.Length));
-            Console.Write(w + " ");
+            foreach(char letter in _word)
+            {
+                Console.Write("_");
+            }
         }
+        else
+            Console.Write(_word);
     }
+   
 }/*
 
     private List<Word> GetVisibleWords()
