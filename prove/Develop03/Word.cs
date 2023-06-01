@@ -34,14 +34,14 @@ public class Word
         myRandomIndex = r.Next(hideWords.Length);
         results.Add(hideWords[myRandomIndex]);
         //Console.WriteLine(hideWords[myRandomIndex]); //this gets a random word from the scripture
-        Console.WriteLine(string.Join("", results));
+        //Console.WriteLine(string.Join("", results));
         Console.ReadKey();
         //Console.WriteLine(text);
-        /*foreach (string w in hideWords)
+        foreach (string w in hideWords)
         {
-            //text = text.Replace(_word, new string('_', _word.Length));
+            text = text.Replace(w, new string('_', hideWords.Length));
             Console.Write(w + " ");
-        }*/
+        }
     }
 }/*
 
