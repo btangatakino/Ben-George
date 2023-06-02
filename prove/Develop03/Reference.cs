@@ -9,11 +9,7 @@ public class Reference
     private int _chapter;
     private int _verse;
     private int _endVerse;
-
-    public Reference()
-    {
-    }
-
+    
     public Reference(string book, int chapter, int verse)
     {
         _book = book;
@@ -32,11 +28,6 @@ public class Reference
 
     public void GetReference()
     {
-        /*_book = "Proverbs";
-        _chapter = 3;
-        _verse = 5;
-        _endVerse = 6;*/
-
         if (_endVerse == -1)
         {
             Console.WriteLine($"{_book} {_chapter}:{_verse}");

@@ -27,22 +27,5 @@ public class Word
         }
         else
             Console.Write(_word);
-    }
-   
-}/*
-
-    private List<Word> GetVisibleWords()
-    {
-        throw new NotImplementedException();
-    }
-
-    public void ShowWords()
-    {
-        //logic if hidden then show __  if not hidden, then show the word
-    }
-    
-    public void GetWords()
-    {
-        Console.WriteLine($"{_word}");
-    }
-}*/
+    }  
+}

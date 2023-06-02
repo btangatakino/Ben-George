@@ -8,18 +8,13 @@ class Program
     {
         Console.Clear();
         string userValue;
-        //ConsoleKeyInfo click;
-        
-        //Console.Clear();  
-        //This part is working
-        
-        //This part is working for scripture.Display
-        Scriptures scripture = new Scriptures("Proverbs", 3, 5, 6,"Trust in the Lord in the Lord with all thine heart; and lean not unto thine own understaing. In all thy ways, aknowledge him, and he shall direct thy paths.");
+        /*Scriptures scripture = new Scriptures("Proverbs", 3, 5, 6,"Trust in the Lord with all thine heart; and lean not unto thine own understaing. In all thy ways, aknowledge him, and he shall direct thy paths.");*/
+        Scriptures scripture = new Scriptures("Moses", 1, 39,"For behold, this is my work and my glory-to bring to pass the immortality and eternal life of man.");
         do
         {   
-            Console.Clear();
-            scripture.Display();
+            Console.Clear();            
             scripture.Reference.GetReference();
+            scripture.Display();
             Console.WriteLine();
             Console.WriteLine("Press enter to continue or type 'quit' to finish:");      
             userValue = Console.ReadLine();
@@ -33,9 +28,7 @@ class Program
                     status = scripture.HideWord();
                 }
                 while(!status);
-            }
-            
-            
+            }          
         }
         while(userValue.ToLower() != "quit");
     }
