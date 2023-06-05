@@ -7,36 +7,55 @@ class Program
     static void Main(string[] args)
     {
         Console.Clear();
-        string userValue;
-        List<string> scriptureList = new List<string>();
-        
-        Scriptures scripture = new Scriptures("Proverbs", 3, 5, 6,"Trust in the Lord with all thine heart; and lean not unto thine own understaing. In all thy ways, aknowledge him, and he shall direct thy paths.");
-        //Scriptures scripture = new Scriptures("Moses", 1, 39,"For behold, this is my work and my glory-to bring to pass the immortality and eternal life of man.");
-        //RandomScripture ranscript = new RandomScripture();      
-        do
-        {   
-            Console.Clear();
-            RandomScripture ranscript = new RandomScripture();
-            ranscript.GenerateScripture();
-            
-            scripture.Reference.GetReference();
-            scripture.Display();
-            Console.WriteLine();
-            Console.WriteLine("Press enter to continue or type 'quit' to finish:");      
+        string userValue = "";
+        Scriptures scripture;
+        RandomScripture ranscript = new RandomScripture();
+
+        while (true)
+        {
+            Console.WriteLine("1) Memorize random scripture");
+            Console.WriteLine("2) Quit");
             userValue = Console.ReadLine();
-            if(scripture.AllWordsHidden())
-                break;
-            for(int x = 0; x < 3; x++)
-            //for(int i=0,j=0; i<3 || j<1; i++, j++)
+            if (userValue == "1")
             {
-                bool status;
+                Console.Clear();
+                
+                scripture = ranscript.GenerateScripture();
                 do
                 {
-                    status = scripture.HideWord();
+                    Console.Clear();
+                    scripture.Reference.GetReference();
+                    scripture.Display();
+                    Console.WriteLine();
+                    Console.WriteLine("Press enter to continue or type 'quit' to finish:");
+                    userValue = Console.ReadLine();
+                    if (scripture.AllWordsHidden())
+                        break;
+                    for (int x = 0; x < 3; x++)
+                    //for(int i=0,j=0; i<3 || j<1; i++, j++)
+                    {
+                        bool status;
+                        do
+                        {
+                            status = scripture.HideWord();
+                        }
+                        //while(!status);
+                        while (!status && !scripture.AllWordsHidden());
+                        // if (scripture.AllWordsHidden())
+                        // {
+                        //     break;
+                        // }
+                    }
                 }
-                while(!status);
-            }          
+                while (userValue.ToLower() != "quit");
+            }
+            else
+                break;
         }
-        while(userValue.ToLower() != "quit");
+        //Scriptures scripture = new Scriptures("Proverbs", 3, 5, 6,"Trust in the Lord with all thine heart; and lean not unto thine own understaing. In all thy ways, aknowledge him, and he shall direct thy paths.");
+        //Scriptures scripture = new Scriptures("Moses", 1, 39,"For behold, this is my work and my glory-to bring to pass the immortality and eternal life of man.");
+        //RandomScripture ranscript = new RandomScripture();      
+
+ 
     }
-}    
+}

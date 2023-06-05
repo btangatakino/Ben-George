@@ -7,68 +7,40 @@ using System.Threading.Tasks;
 
 public class RandomScripture
 {
-    string _reference;
-    string _verse;
-    string _book;
-    string _endVerse;
-    string _chapter;
-
-    public RandomScripture(string reference, string verse)
+    private Random random = new Random();
+    // List to keep track of the used indexes
+    public List<int> usedIndex = new List<int>();
+    private List<List<string>> scriptList = new List<List<string>>()
     {
-        _reference = new Reference(book, chapter, verse);
-        _verse = text;
-        string[] words = text.Split(" ");
-        foreach(string word in words)
+        new List<string>{ "Moses 1 39", "For behold this is my work and my glory-to bring to pass the immortality and eternal life of man." },
+        new List<string>{ "James 3 5 6", "If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him. But let him ask in faith, nothing wavering. For he that wavereth is like a wave of the sea driven with the wind and tossed." },
+        new List<string>{ "Proverbs 3 5 6", "Trust in the Lord with all your heart; and lean not unto thine own understanding. In all thy ways, aknowledge him, and he shall direct thy paths." },
+        new List<string>{ "1Nephi 3 7", "And it came to pass that I, Nephi, said unto my father: I will go and do the things which the Lord hath commanded, for I know that the Lord giveth no commandments unto the children of men, save he shall prepare a way for them that they may accomplish the thing which he commandeth them." }
+    };
+    public Scriptures GenerateScripture()
+    {
+        Scriptures scripture;
+        int index;
+        do
         {
-            Word wordObj = new Word(word);
-            _words.Add(wordObj);
+            index = random.Next(scriptList.Count); // put this in a loop and keep generating an index while the index is not in the index List
         }
-    }
-    public void GenerateScripture()
-    {
-        Dictionary<string, string> scriptDict = new Dictionary<string, string>()
+        while(usedIndex.Contains(index));
+        usedIndex.Add(index);
+        if(usedIndex.Count == scriptList.Count)
         {
-            { "Moses 1:39", "For behold this is my work and my glory-to bring to pass the immortality and eternal-life of man." },
-            { "James 3:5-6", "If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him. But let him ask in faith, nothing wavering. For he that wavereth is like a wave of the sea driven with the wind and tossed." },
-            { "Proverbs 3:5-6", "Trust in the Lord with all your heart; and lean not unto thine own understanding. In all thy ways, aknowledge him, and he shall direct thy paths." }
-        };
-        foreach (KeyValuePair<string, string> user in scriptDict)
-        {
-            Console.WriteLine(user.Key);
-            Console.WriteLine(user.Value);
-
-            
-    }
-        
-        Random random = new Random();
-        int myIndex = random.Next(user.Value.Length);
-        displayScripture = scriptDict[myIndex];
-        Console.WriteLine(_displayScripture);
+            usedIndex.Clear();
         }
+        
+        string[] data = scriptList[index][0].Split();
+        string text = scriptList[index][1];
+        if(data.Length == 3)
+        {
+            scripture = new Scriptures(data[0], int.Parse(data[1]), int.Parse(data[2]), text);
+        }
+        else{
+            scripture = new Scriptures(data[0], int.Parse(data[1]), int.Parse(data[2]), int.Parse(data[3]), text);
+        }
+        return scripture;
     }
-    /*public string _displayScripture;
-    private string _referenc;
-    private string _ver;
-    public RandomScripture()
-    {
-        _referenc = referenc;
-        _ver = ver;
-    }
-
-    public void RandomScript()
-    {
-        var scriptsList = new List<KeyValuePair>(string, string);
-        
-
-        scriptsList.Add(new KeyValuePair<string, string>("Moses: 1:39", "For behold, this is my work and my glory to bring to pass the immortality and eternal life of man"));
-        
-        scriptsList.Add(new KeyValuePair<string, string>("James 1:5", "If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him."));
-        
-        scriptsList.Add(new KeyValuePair<string, string>("Proverbs 3:5-6", "Trust in the Lord with all your heart, and lean not to your own understanding. In all thy ways, acknowledge Him, and He shall direct thy paths."));
-
-        Random random = new Random();
-        int myIndex = random.Next(scriptsList.Count);
-        _displayScripture = scriptsList[myIndex];
-        Console.WriteLine(_displayScripture);
-    }*/
 }
