@@ -51,7 +51,7 @@ class Program
         }
     
 
-        /*List<string> animationStrings = new List<string>();
+        List<string> animationStrings = new List<string>();
         animationStrings.Add("|");
         animationStrings.Add("/");
         animationStrings.Add("-");
@@ -79,6 +79,6 @@ class Program
             {
                 i = 0;
             }
-        }*/
+        }
     }
 }

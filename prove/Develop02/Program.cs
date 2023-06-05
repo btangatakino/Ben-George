@@ -18,7 +18,6 @@ class Program
 
         static string DisplayWelcomeMessage()
         {
-            //Console.WriteLine("Welcome to the Journal Program!");
             Console.WriteLine("Please select one of the following choices:");
             Console.WriteLine("1. Write");
             Console.WriteLine("2. Display");

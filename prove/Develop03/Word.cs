@@ -18,9 +18,9 @@ public class Word
    
     public void Display()
     {
-        if(_isHidden)
+        if (_isHidden)
         {
-            foreach(char letter in _word)
+            foreach (char letter in _word)
             {
                 Console.Write("_");
             }
