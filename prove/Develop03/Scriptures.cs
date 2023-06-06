@@ -6,7 +6,6 @@ public class Scriptures
 {   
     private Reference _reference;
     private string _verse;
-    private int _bookNumber; //new line added
     private Random rnd = new Random();
     private List<Word> _words = new List<Word>();
     public Reference Reference
@@ -25,19 +24,6 @@ public class Scriptures
             _words.Add(wordObj);
         }
     }
-        
-    public Scriptures(int bookNumber, string book, int chapter, int verse, string text)
-    {
-        _reference = new Reference(bookNumber, book, chapter, verse);
-        _verse = text;
-        string[] words = text.Split(" ");
-        foreach(string word in words)
-        {
-            Word wordObj = new Word(word);
-            _words.Add(wordObj);
-        }
-    }//new constructor added to cater for book number, eg. 1 Nephi 3:7
-
     public Scriptures(string book, int chapter, int verse, int endVerse, string text)
     {
         _reference = new Reference(book, chapter, verse, endVerse);
@@ -49,18 +35,6 @@ public class Scriptures
             _words.Add(wordObj);
         }
     }
-        
-    public Scriptures(int bookNumber, string book, int chapter, int verse, int endVerse, string text)
-    {
-        _reference = new Reference(bookNumber, book, chapter, verse, endVerse);
-        _verse = text;
-        string[] words = text.Split(" ");
-        foreach(string word in words)
-        {
-            Word wordObj = new Word(word);
-            _words.Add(wordObj);
-        }
-    }//new constructor added to cater for book number and end verse
     
     public void Display()
     {

@@ -33,7 +33,9 @@ class Program
                     Console.WriteLine("\nPress enter to continue or type 'quit' to choose another scripture:");
                     userValue = Console.ReadLine();
                     if (scripture.AllWordsHidden())
+                    {
                         break;
+                    }
                     for (int x = 0; x < 3; x++)
                     {
                         bool status;
