@@ -41,16 +41,12 @@ public class RandomScripture
         string text =rndScript[4];
         if(end == null)
         {
-            scripture = new Scriptures(book, int.Parse(chapter), int.Parse(start), text);//this is a working line
+            scripture = new Scriptures(book, int.Parse(chapter), int.Parse(start), text);
         }
         else
         {
-            scripture = new Scriptures(book, int.Parse(chapter), int.Parse(start), int.Parse(end), text);//this is a new line
-        }/*case where you have a book number like 1 Nephi 3:7
-        else
-        {
-            scripture = new Scriptures(int.Parse(data[0]), data[1], int.Parse(data[2]), int.Parse(data[3]), int.Parse(data[4]), text);
-        }*/
+            scripture = new Scriptures(book, int.Parse(chapter), int.Parse(start), int.Parse(end), text);
+        }
         return scripture;
     }
 }
