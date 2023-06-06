@@ -49,5 +49,6 @@ class Program
             else
                 break;
         }
+        Console.WriteLine("Thank you for using the Scripture Memorizer Prograrm!");
     }
 }
