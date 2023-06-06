@@ -23,7 +23,7 @@ public class RandomScripture
         int index;
         do
         {
-            index = random.Next(scriptList.Count); // put this in a loop and keep generating an index while the index is not in the index List
+            index = random.Next(scriptList.Count);
         }
         while(usedIndex.Contains(index));
         usedIndex.Add(index);

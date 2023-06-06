@@ -4,7 +4,7 @@ using System.IO;
 using System.Text;
 public class Scriptures
 {   
-    Reference _reference;
+    private Reference _reference;
     private string _verse;
     private Random rnd = new Random();
     private List<Word> _words = new List<Word>();
