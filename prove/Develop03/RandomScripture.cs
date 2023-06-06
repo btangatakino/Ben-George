@@ -15,7 +15,9 @@ public class RandomScripture
         new List<string>{ "Moses 1 39", "For behold this is my work and my glory-to bring to pass the immortality and eternal life of man." },
         new List<string>{ "James 3 5 6", "If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him. But let him ask in faith, nothing wavering. For he that wavereth is like a wave of the sea driven with the wind and tossed." },
         new List<string>{ "Proverbs 3 5 6", "Trust in the Lord with all your heart; and lean not unto thine own understanding. In all thy ways, aknowledge him, and he shall direct thy paths." },
-        new List<string>{ "1 Nephi 3 7", "And it came to pass that I, Nephi, said unto my father: I will go and do the things which the Lord hath commanded, for I know that the Lord giveth no commandments unto the children of men, save he shall prepare a way for them that they may accomplish the thing which he commandeth them." }
+        new List<string>{ "Moroni 10 4 5", "And when ye shall recieve these things, I would exhort you that ye would ask God, the Eternal Father, in the name of Christ, if these things are not true; and if ye shall ask with real intent, having faith in Christ, he will manifest the truth of it unto you, by the power of the Holy Ghost. And by the power of the Holy Ghost ye may know the truth of all things." }
+        /*
+        new List<string>{ "1 Nephi 3 7", "And it came to pass that I, Nephi, said unto my father: I will go and do the things which the Lord hath commanded, for I know that the Lord giveth no commandments unto the children of men, save he shall prepare a way for them that they may accomplish the thing which he commandeth them." }*/
     };
     public Scriptures GenerateScripture()
     {
@@ -36,11 +38,16 @@ public class RandomScripture
         string text = scriptList[index][1];
         if(data.Length == 3)
         {
-            scripture = new Scriptures(data[0], int.Parse(data[1]), int.Parse(data[2]), text);
+            scripture = new Scriptures(data[0], int.Parse(data[1]), int.Parse(data[2]), text);//this is a working line
         }
-        else{
-            scripture = new Scriptures(data[0], int.Parse(data[1]), int.Parse(data[2]), int.Parse(data[3]), text);
-        }
+        else
+        {
+            scripture = new Scriptures(data[0], int.Parse(data[1]), int.Parse(data[2]), int.Parse(data[3]), text);//this is a new line
+        }/*case where you have a book number like 1 Nephi 3:7
+        else
+        {
+            scripture = new Scriptures(int.Parse(data[0]), data[1], int.Parse(data[2]), int.Parse(data[3]), int.Parse(data[4]), text);
+        }*/
         return scripture;
     }
 }
