@@ -36,8 +36,7 @@ public class Scriptures
             Word wordObj = new Word(word);
             _words.Add(wordObj);
         }
-    }
-    //new constructor added
+    }//new constructor added to cater for book number, eg. 1 Nephi 3:7
 
     public Scriptures(string book, int chapter, int verse, int endVerse, string text)
     {
@@ -50,8 +49,7 @@ public class Scriptures
             _words.Add(wordObj);
         }
     }
-    
-    
+        
     public Scriptures(int bookNumber, string book, int chapter, int verse, int endVerse, string text)
     {
         _reference = new Reference(bookNumber, book, chapter, verse, endVerse);
@@ -62,7 +60,7 @@ public class Scriptures
             Word wordObj = new Word(word);
             _words.Add(wordObj);
         }
-    }//new constructor added
+    }//new constructor added to cater for book number and end verse
     
     public void Display()
     {
