@@ -11,10 +11,13 @@ class Program
         Scriptures scripture;
         RandomScripture ranscript = new RandomScripture();
 
+        Console.WriteLine("Welcome to the Scripture Memorizer Program!");
+
         while (true)
         {
-            Console.WriteLine("1) Memorize random scripture");
+            Console.WriteLine("1) Choose a Scripture to memorize.");
             Console.WriteLine("2) Quit");
+            Console.WriteLine("\nType 1 to continue or type 2 or 'quit' to finish:");
             userValue = Console.ReadLine();
             if (userValue == "1")
             {
@@ -27,24 +30,18 @@ class Program
                     scripture.Reference.GetReference();
                     scripture.Display();
                     Console.WriteLine();
-                    Console.WriteLine("Press enter to continue or type 'quit' to finish:");
+                    Console.WriteLine("\nPress enter to continue or type 'quit' to choose another scripture:");
                     userValue = Console.ReadLine();
                     if (scripture.AllWordsHidden())
                         break;
                     for (int x = 0; x < 3; x++)
-                    //for(int i=0,j=0; i<3 || j<1; i++, j++)
                     {
                         bool status;
                         do
                         {
                             status = scripture.HideWord();
                         }
-                        //while(!status);
                         while (!status && !scripture.AllWordsHidden());
-                        // if (scripture.AllWordsHidden())
-                        // {
-                        //     break;
-                        // }
                     }
                 }
                 while (userValue.ToLower() != "quit");
@@ -52,10 +49,5 @@ class Program
             else
                 break;
         }
-        //Scriptures scripture = new Scriptures("Proverbs", 3, 5, 6,"Trust in the Lord with all thine heart; and lean not unto thine own understaing. In all thy ways, aknowledge him, and he shall direct thy paths.");
-        //Scriptures scripture = new Scriptures("Moses", 1, 39,"For behold, this is my work and my glory-to bring to pass the immortality and eternal life of man.");
-        //RandomScripture ranscript = new RandomScripture();      
-
- 
     }
 }
