@@ -11,13 +11,13 @@ class Program
         Scriptures scripture;
         RandomScripture ranscript = new RandomScripture();
 
-        Console.WriteLine("Welcome to the Scripture Memorizer Program!");
+        Console.WriteLine("Welcome to the Scripture Memorizer Program!\n");
 
         while (true)
         {
             Console.WriteLine("1) Choose a Scripture to memorize.");
             Console.WriteLine("2) Quit");
-            Console.WriteLine("\nType 1 to continue or type 2 or 'quit' to finish:");
+            Console.WriteLine("\nType 1 to continue or press enter, type 2, or type 'quit' to finish:");
             userValue = Console.ReadLine();
             if (userValue == "1")
             {

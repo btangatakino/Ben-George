@@ -15,7 +15,7 @@ public class RandomScripture
         new List<string>{ "Moses 1 39", "For behold this is my work and my glory-to bring to pass the immortality and eternal life of man." },
         new List<string>{ "James 3 5 6", "If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him. But let him ask in faith, nothing wavering. For he that wavereth is like a wave of the sea driven with the wind and tossed." },
         new List<string>{ "Proverbs 3 5 6", "Trust in the Lord with all your heart; and lean not unto thine own understanding. In all thy ways, aknowledge him, and he shall direct thy paths." },
-        new List<string>{ "1Nephi 3 7", "And it came to pass that I, Nephi, said unto my father: I will go and do the things which the Lord hath commanded, for I know that the Lord giveth no commandments unto the children of men, save he shall prepare a way for them that they may accomplish the thing which he commandeth them." }
+        new List<string>{ "1 Nephi 3 7", "And it came to pass that I, Nephi, said unto my father: I will go and do the things which the Lord hath commanded, for I know that the Lord giveth no commandments unto the children of men, save he shall prepare a way for them that they may accomplish the thing which he commandeth them." }
     };
     public Scriptures GenerateScripture()
     {
