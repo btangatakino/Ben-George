@@ -69,7 +69,7 @@ public class Deacon : AaronicPriesthood
         return $"A {_office} can pass the Sacrament.";
     }
 }
-/*static class Program
+static class Program
 {
     static void Main(string[] args)
     {        
@@ -98,4 +98,4 @@ public class Deacon : AaronicPriesthood
         Console.WriteLine(deacon.GetInfo());
         Console.WriteLine(deacon.Responsibilites());
     }
-}*/
+}
