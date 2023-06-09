@@ -8,7 +8,7 @@ public class Activity
     protected string _activityName;
     protected string _description;
 
-    public Activity()
+    /*public Activity()
     {}
     public Activity(int userInput)
     {
@@ -38,7 +38,7 @@ public class Activity
     public string Display()
     {
         return ($"Welcome to the {_activityName} Activity\n\nThis Activity will help you throudh breathing in and out slowly. Clear your mind and focus on your breathing.\n\nHow long, in seconds, would you like for your session?");
-    }
+    }*/
     public void DisplayStartMessage()
     {
         Console.Write("\nHow long, in seconds, would you like for your session? ");
@@ -81,7 +81,6 @@ public class Activity
     }
     public void DisplayEndMessage()
     {
-        Console.WriteLine();
         Console.WriteLine("\nWell done!!");
     }
 }

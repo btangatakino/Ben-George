@@ -26,12 +26,11 @@ class Program
                     Console.Clear();
                     BreathingActivity b = new BreathingActivity();
                     b.DisplayBreathe();
-                    
+
                     for (int t = 3; t > 0; t--)
                     {
                         b.BreatheIn();
                         b.BreatheOut();
-                        Console.WriteLine(t);
                     }
                     b.DisplayEndMessage();
                     b.GetEndMessage();
@@ -41,6 +40,10 @@ class Program
                     Console.Clear(); 
                     ReflectingActivity r = new ReflectingActivity();
                     r.DisplayReflect();
+                    r.RunReflect();
+                    GenerateReflectPrompt gen = new GenerateReflectPrompt();
+                    gen.GeneratePrompt();
+                    gen.DisplayEndMessage();
                     break;
 
                 case "3":
@@ -57,38 +60,6 @@ class Program
                     Console.WriteLine("Invalid input. Please enter a valid integer.");
                     break;
             }
-        }   
-        /*static void GetReadySpinner()
-        {
-            List<string> animationStrings = new List<string>();
-            animationStrings.Add("|");
-            animationStrings.Add("/");
-            animationStrings.Add("-");
-            animationStrings.Add("\\");
-            animationStrings.Add("|");
-            animationStrings.Add("/");
-            animationStrings.Add("-");
-            animationStrings.Add("\\");
-
-            DateTime startTime = DateTime.Now;;
-            DateTime endTime = startTime.AddSeconds(10);
-
-            int i = 0;
-
-            while (DateTime.Now < endTime)
-            {
-                string s = animationStrings[i];
-                Console.Write(s);
-                Thread.Sleep(1000);
-                Console.Write("\b \b");
-
-                i++;
-
-                if (i >= animationStrings.Count)
-                {
-                    i = 0;
-                }
-            }
-        }*/
+        }
     }
 }

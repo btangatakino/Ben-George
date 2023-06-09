@@ -8,19 +8,17 @@ public class BreathingActivity : Activity
 {
     private string _breathing;  
 
-    public BreathingActivity() : base()
+    /*public BreathingActivity() : base()
     {}  
 
     public BreathingActivity(string activityName, string description) : base(activityName, description)
-    {}
+    {}*/
     public void DisplayBreathe()
     {
         Console.WriteLine("Welcome to the Breathing Activity.");
         Console.WriteLine("\nThis activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.");
         DisplayStartMessage();
         Spinner();
-        //DisplayEndMessage();
-        //GetReadySpinner();
     }
     
     public void BreatheIn()
