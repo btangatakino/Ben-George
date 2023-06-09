@@ -26,6 +26,10 @@ class Program
                     Console.Clear();
                     BreathingActivity b = new BreathingActivity();
                     b.DisplayBreathe();
+                    b.BreathIn();
+                    b.BreathOut();
+                    b.DisplayEndMessage();
+                    b.GetEndMessage();
                     break;
 
                 case "2":
@@ -48,37 +52,38 @@ class Program
                     Console.WriteLine("Invalid input. Please enter a valid integer.");
                     break;
             }
-        }
-    
-
-        List<string> animationStrings = new List<string>();
-        animationStrings.Add("|");
-        animationStrings.Add("/");
-        animationStrings.Add("-");
-        animationStrings.Add("\\");
-        animationStrings.Add("|");
-        animationStrings.Add("/");
-        animationStrings.Add("-");
-        animationStrings.Add("\\");
-
-        DateTime startTime = DateTime.Now;;
-        DateTime endTime = startTime.AddSeconds(10);
-
-        int i = 0;
-
-        while (DateTime.Now < endTime)
+        }   
+        /*static void GetReadySpinner()
         {
-            string s = animationStrings[i];
-            Console.Write(s);
-            Thread.Sleep(1000);
-            Console.Write("\b \b");
+            List<string> animationStrings = new List<string>();
+            animationStrings.Add("|");
+            animationStrings.Add("/");
+            animationStrings.Add("-");
+            animationStrings.Add("\\");
+            animationStrings.Add("|");
+            animationStrings.Add("/");
+            animationStrings.Add("-");
+            animationStrings.Add("\\");
 
-            i++;
+            DateTime startTime = DateTime.Now;;
+            DateTime endTime = startTime.AddSeconds(10);
 
-            if (i >= animationStrings.Count)
+            int i = 0;
+
+            while (DateTime.Now < endTime)
             {
-                i = 0;
+                string s = animationStrings[i];
+                Console.Write(s);
+                Thread.Sleep(1000);
+                Console.Write("\b \b");
+
+                i++;
+
+                if (i >= animationStrings.Count)
+                {
+                    i = 0;
+                }
             }
-        }
+        }*/
     }
 }

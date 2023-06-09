@@ -9,7 +9,6 @@ public class ListingActivity : Activity
     {
         Console.WriteLine("Welcome to the Listing Activity.");
         Console.WriteLine("\nThis activity will help you on times in your life when you relect on the good things in your life by having you list as many things as you can in a certain area.");
-        Console.Write("\nHow long, in seconds, would you like for your session? ");
         Console.ReadLine();
     }
 }

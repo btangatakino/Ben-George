@@ -9,7 +9,6 @@ public class ReflectingActivity : Activity
     {
         Console.WriteLine("Welcome to the Reflecting Activity.");
         Console.WriteLine("\nThis activity will help you on times in your life when you have shown. This will help you recognize the power you have and how you use it in other aspects of your life");
-        Console.Write("\nHow long, in seconds, would you like for your session? ");
         Console.ReadLine();
     }
 }
