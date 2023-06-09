@@ -81,6 +81,7 @@ public class Activity
     }
     public void DisplayEndMessage()
     {
+        Console.WriteLine();
         Console.WriteLine("\nWell done!!");
     }
 }

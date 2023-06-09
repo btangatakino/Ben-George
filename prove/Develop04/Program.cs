@@ -26,8 +26,13 @@ class Program
                     Console.Clear();
                     BreathingActivity b = new BreathingActivity();
                     b.DisplayBreathe();
-                    b.BreathIn();
-                    b.BreathOut();
+                    
+                    for (int t = 3; t > 0; t--)
+                    {
+                        b.BreatheIn();
+                        b.BreatheOut();
+                        Console.WriteLine(t);
+                    }
                     b.DisplayEndMessage();
                     b.GetEndMessage();
                     break;

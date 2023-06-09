@@ -1,5 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
 
 public class BreathingActivity : Activity
 {
@@ -19,10 +22,10 @@ public class BreathingActivity : Activity
         //DisplayEndMessage();
         //GetReadySpinner();
     }
-    public void BreathIn()
+    
+    public void BreatheIn()
     {
-        Console.WriteLine();
-        Console.Write("Breath in...");
+        Console.Write("\nBreathe in...");
         for (int i = 4; i > 0; i--)
         {
             Console.Write(i);
@@ -31,15 +34,16 @@ public class BreathingActivity : Activity
         }
     }
 
-    public void BreathOut()
+    public void BreatheOut()
     {
-        Console.Write("\nNow breath out...");
+        Console.Write("\nNow breathe out...");
         for (int i = 6; i > 0; i--)
         {
             Console.Write(i);
             Thread.Sleep(1000);
-            Console.Write("\b \b");
+            Console.Write("\b \b");;
         }
+        Console.WriteLine();
     }
     public void GetEndMessage()
     {
