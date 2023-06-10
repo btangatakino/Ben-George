@@ -24,24 +24,25 @@ class Program
             {
                 case "1":
                     Console.Clear();
-                    BreathingActivity b = new BreathingActivity();
-                    b.DisplayBreathe();
+                    BreathingActivity breathe = new BreathingActivity();
+                    breathe.DisplayBreathe();
 
                     for (int t = 3; t > 0; t--)
                     {
-                        b.BreatheIn();
-                        b.BreatheOut();
+                        breathe.BreatheIn();
+                        breathe.BreatheOut();
                     }
-                    b.DisplayEndMessage();
-                    b.GetEndMessage();
+                    breathe.DisplayEndMessage();
+                    breathe.GetEndMessage();
                     break;
 
                 case "2":
                     Console.Clear(); 
-                    ReflectingActivity r = new ReflectingActivity();
-                    r.DisplayReflect();
-                    r.RunReflect();
+                    ReflectingActivity reflect = new ReflectingActivity();
+                    reflect.DisplayReflect();
+                    reflect.RunReflect();
                     GenerateReflectPrompt gen = new GenerateReflectPrompt();
+                    Console.Clear();
                     gen.GeneratePrompt();
                     gen.DisplayEndMessage();
                     break;
@@ -57,7 +58,7 @@ class Program
                     break;
 
                 default:
-                    Console.WriteLine("Invalid input. Please enter a valid integer.");
+                    Console.WriteLine("Invalid input. Please enter a number from 1 to 4.");
                     break;
             }
         }

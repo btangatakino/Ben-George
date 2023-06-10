@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class Activity
 {
-    public int _duration;
+    protected int _duration;
     protected int _userInput;
     protected string _activityName;
     protected string _description;
@@ -42,7 +42,9 @@ public class Activity
     public void DisplayStartMessage()
     {
         Console.Write("\nHow long, in seconds, would you like for your session? ");
-        _userInput = int.Parse(Console.ReadLine());
+        _duration = int.Parse(Console.ReadLine());
+        DateTime startTime = DateTime.Now;;
+        DateTime endTime = startTime.AddSeconds(_duration);
         Console.Clear();
         Console.WriteLine("Get Ready");
     }
@@ -81,6 +83,6 @@ public class Activity
     }
     public void DisplayEndMessage()
     {
-        Console.WriteLine("\nWell done!!");
+        Console.WriteLine("Well done!!");
     }
 }

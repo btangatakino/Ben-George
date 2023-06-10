@@ -19,12 +19,15 @@ public class ReflectingActivity : Activity
         Console.WriteLine("\n--- Think of a time when you did somethig really dificult. ---");
         Console.WriteLine("\nWhen you have something in mind, press enter to continue.");
         Console.ReadLine();
-        Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.\nYou may begin in:  ");
+        Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
+        Console.WriteLine("You may begin in: ");
         for (int i = 4; i > 0; i--)
         {
             Console.Write(i);
             Thread.Sleep(1000);
             Console.Write("\b \b");
         }
+        Spinner();
     }
+    
 }
