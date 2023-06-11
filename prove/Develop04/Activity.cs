@@ -8,12 +8,15 @@ public class Activity
     protected string _activityName;
     protected string _description;
 
-    /*public Activity()
+    public Activity()
     {}
-    public Activity(int userInput)
+    public Activity(int userInput, string activityName, string description, int duration)
     {
         _userInput = userInput;
-    }
+        _activityName = activityName;
+        _description = description;
+        _duration = duration;
+    }/*
     public Activity(string activityName, string description)
     {
         _activityName = activityName;
