@@ -6,46 +6,25 @@ using System.Threading.Tasks;
 
 public class BreathingActivity : Activity
 {
-    private string _breathing;  
-
-    /*public BreathingActivity() : base()
-    {}  
-
-    public BreathingActivity(string activityName, string description) : base(activityName, description)
-    {}*/
-    public void DisplayBreathe()
+    public BreathingActivity()
     {
-        Console.WriteLine("Welcome to the Breathing Activity.");
-        Console.WriteLine("\nThis activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.");
+        _activityName = "Breathing";
+        _description = "\nThis activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.";
+    }
+
+    public void RunActivity()
+    {
         DisplayStartMessage();
-        Spinner();
-    }
-    
-    public void BreatheIn()
-    {
-        Console.Write("\nBreathe in...");
-        for (int i = 4; i > 0; i--)
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(_duration);
+        while(DateTime.Now < endTime)
         {
-            Console.Write(i);
-            Thread.Sleep(1000);
-            Console.Write("\b \b");
+            Console.Write("\nBreathe in...");
+            Timer(4);
+            Console.Write("\nNow breathe out...");
+            Timer(6);
+            Console.WriteLine();
         }
-    }
-
-    public void BreatheOut()
-    {
-        Console.Write("\nNow breathe out...");
-        for (int i = 6; i > 0; i--)
-        {
-            Console.Write(i);
-            Thread.Sleep(1000);
-            Console.Write("\b \b");;
-        }
-        Console.WriteLine();
-    }
-    public void GetEndMessage()
-    {
-        Console.WriteLine("\nYou have completed another 30 seconds of the Breathing Activity");
-        Spinner();
-    }
+        DisplayEndMessage();
+    }    
 }

@@ -25,15 +25,7 @@ class Program
                 case "1":
                     Console.Clear();
                     BreathingActivity breathe = new BreathingActivity();
-                    breathe.DisplayBreathe();
-
-                    for (int t = 3; t > 0; t--)
-                    {
-                        breathe.BreatheIn();
-                        breathe.BreatheOut();
-                    }
-                    breathe.DisplayEndMessage();
-                    breathe.GetEndMessage();
+                    breathe.RunActivity();
                     break;
 
                 case "2":

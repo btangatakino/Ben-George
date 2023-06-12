@@ -10,46 +10,17 @@ public class Activity
 
     public Activity()
     {}
-    public Activity(int userInput, string activityName, string description, int duration)
-    {
-        _userInput = userInput;
-        _activityName = activityName;
-        _description = description;
-        _duration = duration;
-    }/*
-    public Activity(string activityName, string description)
-    {
-        _activityName = activityName;
-        _description = description;
-    }
-    public string GetActivityName()
-    {
-        return _activityName;
-    }
-    public void SetActivityName(string activityName)
-    {
-        _activityName = activityName;
-    }
-    public string GetDescription()
-    {
-        return _description;
-    }
-    public void SetDescription(string description)
-    {
-        _description = description;
-    }
-    public string Display()
-    {
-        return ($"Welcome to the {_activityName} Activity\n\nThis Activity will help you throudh breathing in and out slowly. Clear your mind and focus on your breathing.\n\nHow long, in seconds, would you like for your session?");
-    }*/
+    
+
     public void DisplayStartMessage()
     {
+        Console.WriteLine($"Welcome to the {_activityName} Activity");
+        Console.WriteLine(_description);
         Console.Write("\nHow long, in seconds, would you like for your session? ");
         _duration = int.Parse(Console.ReadLine());
-        DateTime startTime = DateTime.Now;;
-        DateTime endTime = startTime.AddSeconds(_duration);
         Console.Clear();
         Console.WriteLine("Get Ready");
+        Spinner();
     }
     
     public void Spinner()
@@ -59,33 +30,38 @@ public class Activity
         animationStrings.Add("/");
         animationStrings.Add("-");
         animationStrings.Add("\\");
-        animationStrings.Add("|");
-        animationStrings.Add("/");
-        animationStrings.Add("-");
-        animationStrings.Add("\\");
 
         DateTime startTime = DateTime.Now;;
         DateTime endTime = startTime.AddSeconds(5);
 
         int i = 0;
+        int x = 0;
 
         while (DateTime.Now < endTime)
         {
-            string s = animationStrings[i];
+            x = i % animationStrings.Count;
+            string s = animationStrings[x];
             Console.Write(s);
             Thread.Sleep(1000);
             Console.Write("\b \b");
+            i++;        
+        }
+    }
 
-            i++;
-
-            if (i >= animationStrings.Count)
-            {
-                i = 0;
-            }
+    protected void Timer(int duration)
+    {
+        for (int i = duration; i > 0; i--)
+        {
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
         }
     }
     public void DisplayEndMessage()
     {
-        Console.WriteLine("Well done!!");
+        Console.WriteLine("\nWell done!!");
+        Spinner();
+        Console.WriteLine($"\nYou have completed {_duration} seconds of the {_activityName} activity");
+        Spinner();
     }
 }
