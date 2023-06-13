@@ -3,14 +3,27 @@ using System.Collections.Generic;
 
 public class ReflectingActivity : Activity
 {
-    private string _reflecting;    
+    private string _reflecting;
 
-    public void DisplayReflect()
+    public ReflectingActivity()
     {
-        Console.WriteLine("Welcome to the Reflecting Activity.");
-        Console.WriteLine("\nThis activity will help you on times in your life when you have shown. This will help you recognize the power you have and how you use it in other aspects of your life");
+        _activityName = "Reflecting";
+        _description = "\nThis activity will help you on times in your life when you have shown. This will help you recognize the power you have and how you use it in other aspects of your life.";
+    }
+    public void RunActivity()
+    {
         DisplayStartMessage();
-        Spinner();
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(_duration);
+        while(DateTime.Now < endTime)
+        {
+            Console.Write("\nBreathe in...");
+            Timer(4);
+            Console.Write("\nNow breathe out...");
+            Timer(6);
+            Console.WriteLine();
+        }
+        DisplayEndMessage();
     }
 
     public void RunReflect()

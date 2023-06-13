@@ -31,8 +31,7 @@ class Program
                 case "2":
                     Console.Clear(); 
                     ReflectingActivity reflect = new ReflectingActivity();
-                    reflect.DisplayReflect();
-                    reflect.RunReflect();
+                    reflect.RunActivity();
                     GenerateReflectPrompt gen = new GenerateReflectPrompt();
                     Console.Clear();
                     gen.GeneratePrompt();
