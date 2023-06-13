@@ -32,10 +32,7 @@ class Program
                     Console.Clear(); 
                     ReflectingActivity reflect = new ReflectingActivity();
                     reflect.RunActivity();
-                    GenerateReflectPrompt gen = new GenerateReflectPrompt();
-                    Console.Clear();
-                    gen.GeneratePrompt();
-                    gen.DisplayEndMessage();
+                    
                     break;
 
                 case "3":

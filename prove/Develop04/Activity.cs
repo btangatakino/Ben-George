@@ -20,10 +20,10 @@ public class Activity
         _duration = int.Parse(Console.ReadLine());
         Console.Clear();
         Console.WriteLine("Get Ready");
-        Spinner();
+        Spinner(5);
     }
     
-    public void Spinner()
+    public void Spinner(int duration)
     {
         List<string> animationStrings = new List<string>();
         animationStrings.Add("|");
@@ -32,7 +32,7 @@ public class Activity
         animationStrings.Add("\\");
 
         DateTime startTime = DateTime.Now;;
-        DateTime endTime = startTime.AddSeconds(5);
+        DateTime endTime = startTime.AddSeconds(duration);
 
         int i = 0;
         int x = 0;
@@ -42,7 +42,7 @@ public class Activity
             x = i % animationStrings.Count;
             string s = animationStrings[x];
             Console.Write(s);
-            Thread.Sleep(1000);
+            Thread.Sleep(400);
             Console.Write("\b \b");
             i++;        
         }
@@ -60,8 +60,8 @@ public class Activity
     public void DisplayEndMessage()
     {
         Console.WriteLine("\nWell done!!");
-        Spinner();
+        Spinner(5);
         Console.WriteLine($"\nYou have completed {_duration} seconds of the {_activityName} Activity");
-        Spinner();
+        Spinner(5);
     }
 }

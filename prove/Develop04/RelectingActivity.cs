@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 public class ReflectingActivity : Activity
 {
-    private string _reflecting;
-
+    private GenerateReflectPrompt gen = new GenerateReflectPrompt();
+                    
     public ReflectingActivity()
     {
         _activityName = "Reflecting";
@@ -13,34 +13,29 @@ public class ReflectingActivity : Activity
     public void RunActivity()
     {
         DisplayStartMessage();
+        Console.WriteLine("Consider the following prompt:\n");
+        //Console.WriteLine("\n--- Think of a time when you did somethig really difficult. ---");
+        gen.GeneratePrompt();
+        /*Console.WriteLine("If you want a different prompt, type 1 or enter to continue with this prompt?");
+        string y = Console.ReadLine();
+        do
+        {
+            gen.GeneratePrompt();
+            break;
+        }while (y == "1");*/
+        Console.WriteLine("\nWhen you have something in mind, press enter to continue.");
+        string x = Console.ReadLine();
+        Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
+        Console.Write("You may begin in: ");
+        Timer(5);
+        Console.Clear();
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);
-        while(DateTime.Now < endTime)
+        while (DateTime.Now < endTime)
         {
-            Console.Write("\nBreathe in...");
-            Timer(4);
-            Console.Write("\nNow breathe out...");
-            Timer(6);
-            Console.WriteLine();
+            gen.GenerateQuestion();
+            Spinner(7);
         }
         DisplayEndMessage();
     }
-
-    public void RunReflect()
-    {
-        Console.WriteLine("Consider the following prompt:");
-        Console.WriteLine("\n--- Think of a time when you did somethig really dificult. ---");
-        Console.WriteLine("\nWhen you have something in mind, press enter to continue.");
-        Console.ReadLine();
-        Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
-        Console.WriteLine("You may begin in: ");
-        for (int i = 4; i > 0; i--)
-        {
-            Console.Write(i);
-            Thread.Sleep(1000);
-            Console.Write("\b \b");
-        }
-        Spinner();
-    }
-    
 }
