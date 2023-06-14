@@ -26,9 +26,7 @@ public class ReflectingActivity : Activity
         Console.WriteLine("\nWhen you have something in mind, press enter to continue.");
         string x = Console.ReadLine();
         Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
-        Console.Write("You may begin in: ");
-        Timer(5);
-        Console.Clear();
+        BeginTimer();
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);
         while (DateTime.Now < endTime)

@@ -15,9 +15,7 @@ public class ListingActivity : Activity
         DisplayStartMessage();
         Console.WriteLine("List as many responses you can to the following prompt:\n");
         genP.GeneratePrompsList();
-        Console.Write("You may begin in: ");
-        Timer(5);
-        Console.Clear();
+        BeginTimer();
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);
         while (DateTime.Now < endTime)

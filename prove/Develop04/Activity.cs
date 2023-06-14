@@ -43,6 +43,12 @@ public class Activity
             i++;        
         }
     }
+    protected void BeginTimer()
+    {
+        Console.Write("You may begin in: ");
+        Timer(5);
+        Console.Clear();
+    }
 
     protected void Timer(int duration)
     {
