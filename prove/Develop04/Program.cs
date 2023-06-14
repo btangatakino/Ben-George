@@ -31,14 +31,13 @@ class Program
                 case "2":
                     Console.Clear(); 
                     ReflectingActivity reflect = new ReflectingActivity();
-                    reflect.RunActivity();
-                    
+                    reflect.RunActivity();                    
                     break;
 
                 case "3":
                     Console.Clear();
-                    ListingActivity l = new ListingActivity();
-                    l.DisplayListing();
+                    ListingActivity list = new ListingActivity();
+                    list.RunActivity();
                     break;
 
                 case "4":

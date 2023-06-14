@@ -4,13 +4,9 @@ using System.Collections.Generic;
 public class Activity
 {
     protected int _duration;
-    protected int _userInput;
+    //protected int _userInput;
     protected string _activityName;
     protected string _description;
-
-    public Activity()
-    {}
-    
 
     public void DisplayStartMessage()
     {
