@@ -20,10 +20,10 @@ public class ListingActivity : Activity
         DateTime endTime = startTime.AddSeconds(_duration);
         while (DateTime.Now < endTime)
         {
-           
-        Spinner(5); 
-            
+            Console.Write("> ");
+            string z = Console.ReadLine();            
         }
+        Spinner(5);
         DisplayEndMessage();
     }
 
