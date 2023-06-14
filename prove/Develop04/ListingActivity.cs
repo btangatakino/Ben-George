@@ -7,7 +7,7 @@ public class ListingActivity : Activity
     public ListingActivity()
     {
         _activityName = "Listing";
-        _description = "This activity will help you on times in your life when you reflect on the good things in your life by having you list as many things as you can in a certain area.";
+        _description = "\nThis activity will help you on times in your life when you reflect on the good things in your life by having you list as many things as you can in a certain area.";
     }  
 
     public void RunActivity()
