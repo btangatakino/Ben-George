@@ -11,12 +11,12 @@ public class GeneratePrompt : Activity
     
     private List<string> questions = new List<string>()
     {
-        "How did you feel when it was completed?",
-        "What is your favorite thing about this experience?",
-        "How would you have reacted differently about this experience?",
-        "How would you have rated this experience, 5 is very difficult and 1 not so difficult?",
-        "If you were faced with the same expreience again, would you be prepared to face it?",
-        "What do you think what Jesus Christ would have done in this situation?"
+        "\nHow did you feel when it was completed? ",
+        "\nWhat is your favorite thing about this experience? ",
+        "\nHow would you have reacted differently about this experience? ",
+        "\nHow would you have rated this experience, 5 is very difficult and 1 not so difficult? ",
+        "\nIf you were faced with the same expreience again, would you be prepared to face it? ",
+        "\nWhat do you think what Jesus Christ would have done in this situation? "
     };
     private List<string> prompts = new List<string>()
     {
@@ -45,12 +45,11 @@ public class GeneratePrompt : Activity
         {
             usedIndex.Clear();
         }
-        Console.WriteLine(questions[index]);
+        Console.Write(questions[index]);
     }
     public void GenerateReflectPrompt()
     
     {
-        
         int index2 = random.Next(prompts.Count);
         while (usedIndex2.Contains(index2));
         usedIndex.Add(index2);

@@ -3,7 +3,16 @@ using System.Collections.Generic;
 
 public class ListingActivity : Activity
 {
+    private string _dateTimeEntry;
+    private string _response;
     private GeneratePrompt genP = new GeneratePrompt();
+    private string _entry;
+    public ListingActivity(string response, string entry)
+    {
+        _response = response;
+        _entry = entry.Replace(",", "|");
+        _dateTimeEntry = DateTime.Now.ToString("MM/dd/yyyy");
+    }
     public ListingActivity()
     {
         _activityName = "Listing";
@@ -21,7 +30,17 @@ public class ListingActivity : Activity
         while (DateTime.Now < endTime)
         {
             Console.Write("> ");
-            string z = Console.ReadLine();            
+            string z = Console.ReadLine();
+            /*
+            string userFile = Console.ReadLine();
+            using (StreamWriter outputFile = new StreamWriter(filename))
+            {
+                foreach (Entry entry in _entries)
+                {
+                    outputFile.WriteLine($"{this._dateTimeEntry}, {this._response};
+                    _response = _response.Replace(",", "|");
+                }
+            }*/            
         }
         Spinner(5);
         DisplayEndMessage();

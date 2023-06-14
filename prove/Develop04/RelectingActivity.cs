@@ -24,7 +24,13 @@ public class ReflectingActivity : Activity
         }while (y == "1");*/
         Console.WriteLine("\nWhen you have something in mind, press enter to continue.");
         string x = Console.ReadLine();
-        Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
+        /*ConsoleKeyInfo key1 = Console.ReadKey();
+        if (key1 == 1)
+        {
+            gen.GenerateReflectPrompt();
+            Console.WriteLine("\nWhen you have something in mind, press enter to continue, or if you want a different prompt, type 1.");
+        }
+        Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");*/
         BeginTimer();
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);
