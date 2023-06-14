@@ -3,9 +3,10 @@ using System.Collections.Generic;
 
 public class ListingActivity : Activity
 {
+    private GeneratePrompt genP = new GeneratePrompt();
     public ListingActivity()
     {
-        _activityName = "Listing Activity";
+        _activityName = "Listing";
         _description = "This activity will help you on times in your life when you reflect on the good things in your life by having you list as many things as you can in a certain area.";
     }  
 
@@ -13,10 +14,19 @@ public class ListingActivity : Activity
     {
         DisplayStartMessage();
         Console.WriteLine("List as many responses you can to the following prompt:\n");
-        /*Console.WriteLine("Welcome to the Listing Activity.");
-        Console.WriteLine("\nThis activity will help you on times in your life when you relect on the good things in your life by having you list as many things as you can in a certain area.");*/
-        DisplayStartMessage();
-        Spinner(5);
+        genP.GeneratePrompsList();
+        Console.Write("You may begin in: ");
+        Timer(5);
+        Console.Clear();
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(_duration);
+        while (DateTime.Now < endTime)
+        {
+           
+        Spinner(5); 
+            
+        }
+        DisplayEndMessage();
     }
 
 }

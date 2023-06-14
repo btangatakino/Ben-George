@@ -13,7 +13,7 @@ public class ReflectingActivity : Activity
     public void RunActivity()
     {
         DisplayStartMessage();
-        Console.WriteLine("Consider the following prompt:\n");
+        Console.WriteLine("\nConsider the following prompt:\n");
         //Console.WriteLine("\n--- Think of a time when you did somethig really difficult. ---");
         gen.GenerateReflectPrompt();
         /*Console.WriteLine("If you want a different prompt, type 1 or enter to continue with this prompt?");
