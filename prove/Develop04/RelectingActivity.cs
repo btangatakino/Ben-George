@@ -23,16 +23,22 @@ public class ReflectingActivity : Activity
         {
             gen.GeneratePrompt();
             break;
-        }while (y == "1");*/
-        Console.WriteLine("\nWhen you have something in mind, press enter to continue.");
-        string x = Console.ReadLine();
-        /*ConsoleKeyInfo key1 = Console.ReadKey();
-        if (key1 == 1)
+        }while (y == "1");*/Console.WriteLine("\nWhen you have something in mind, press enter to continue, or if you want a different prompt, type 1.");
+        while (true)
         {
-            gen.GenerateReflectPrompt();
-            Console.WriteLine("\nWhen you have something in mind, press enter to continue, or if you want a different prompt, type 1.");
+            
+            string x = Console.ReadLine();
+            if (x == "1")
+            {
+                gen.GenerateReflectPrompt();
+                Console.WriteLine("\nWhen you have something in mind, press enter to continue, or if you want a different prompt, type 1.");
+                Console.Clear();
+            }
+            else
+                break;
         }
-        Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");*/
+            
+        Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
         BeginTimer();
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);

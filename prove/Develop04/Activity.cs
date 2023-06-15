@@ -38,7 +38,7 @@ public class Activity
             x = i % animationStrings.Count;
             string s = animationStrings[x];
             Console.Write(s);
-            Thread.Sleep(400);
+            Thread.Sleep(350);
             Console.Write("\b \b");
             i++;        
         }
@@ -46,7 +46,7 @@ public class Activity
     protected void BeginTimer()
     {
         Console.Write("You may begin in: ");
-        Timer(5);
+        Timer(4);
         Console.Clear();
     }
 
@@ -62,8 +62,8 @@ public class Activity
     public void DisplayEndMessage()
     {
         Console.WriteLine("\nWell done!!");
-        Spinner(5);
+        Spinner(4);
         Console.WriteLine($"\nYou have completed {_duration} seconds of the {_activityName} Activity");
-        Spinner(5);
+        Spinner(4);
     }
 }
