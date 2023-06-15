@@ -15,7 +15,9 @@ public class ReflectingActivity : Activity
         DisplayStartMessage();
         Console.WriteLine("\nConsider the following prompt:\n");
         gen.GenerateReflectPrompt();
-        /*Console.WriteLine("If you want a different prompt, type 1 or enter to continue with this prompt?");
+        /*var refPrompt = gen.GenerateReflectPrompt();
+        return refPrompt;
+        Console.WriteLine("If you want a different prompt, type 1 or enter to continue with this prompt?");
         string y = Console.ReadLine();
         do
         {
@@ -34,6 +36,7 @@ public class ReflectingActivity : Activity
         BeginTimer();
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);
+        //gen.GenerateReflectPrompt();
         while (DateTime.Now < endTime)
         {
             gen.GenerateReflectQuestion();
