@@ -23,10 +23,10 @@ public class ReflectingActivity : Activity
         {
             gen.GeneratePrompt();
             break;
-        }while (y == "1");*/Console.WriteLine("\nWhen you have something in mind, press enter to continue, or if you want a different prompt, type 1.");
+        }while (y == "1");*/
+        Console.WriteLine("\nWhen you have something in mind, press enter to continue, or if you want a different prompt, type 1.");
         while (true)
-        {
-            
+        {            
             string x = Console.ReadLine();
             if (x == "1")
             {
