@@ -16,7 +16,7 @@ public class GeneratePrompt : Activity
         "\nHow would you have reacted differently about this experience? ",
         "\nHow would you have rated this experience, 5 is very difficult and 1 not so difficult? ",
         "\nIf you were faced with the same expreience again, would you be prepared to face it? ",
-        "\nWhat do you think what Jesus Christ would have done in this situation? "
+        "\nWhat do you think Jesus Christ would have done in this situation? "
     };
     private List<string> reflectPrompts = new List<string>()
     {
