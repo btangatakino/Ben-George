@@ -4,6 +4,7 @@ using System;
 Here are the extra things that I did:
 1. At the begining of the program, when the user is asked to select a choice from the menu and they enter anything other than the numbers 1 to 4, an 'Invalid input. Please enter a number from 1 to 4.' will be displayed.
 2. In the Reflecting Activity, all the questions displayed to the user to reflect on are not repeated until all the questions in the List are used.
+3. In the Reflecting Activity, the user is asked if they want a different prompt by typing 1. The user is then given another prompt
 */
 class Program
 {

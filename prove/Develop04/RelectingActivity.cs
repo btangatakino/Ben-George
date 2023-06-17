@@ -32,7 +32,7 @@ public class ReflectingActivity : Activity
             {
                 gen.GenerateReflectPrompt();
                 Console.WriteLine("\nWhen you have something in mind, press enter to continue, or if you want a different prompt, type 1.");
-                Console.Clear();
+                //Console.Clear();
             }
             else
                 break;
