@@ -35,7 +35,8 @@ public class ReflectingActivity : Activity
                 //Console.Clear();
             }
             else
-                break;
+            {break;
+            }
         }
             
         Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
