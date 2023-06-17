@@ -15,15 +15,6 @@ public class ReflectingActivity : Activity
         DisplayStartMessage();
         Console.WriteLine("\nConsider the following prompt:\n");
         gen.GenerateReflectPrompt();
-        /*var refPrompt = gen.GenerateReflectPrompt();
-        return refPrompt;
-        Console.WriteLine("If you want a different prompt, type 1 or enter to continue with this prompt?");
-        string y = Console.ReadLine();
-        do
-        {
-            gen.GeneratePrompt();
-            break;
-        }while (y == "1");*/
         Console.WriteLine("\nWhen you have something in mind, press enter to continue, or if you want a different prompt, type 1.");
         while (true)
         {            
@@ -32,18 +23,16 @@ public class ReflectingActivity : Activity
             {
                 gen.GenerateReflectPrompt();
                 Console.WriteLine("\nWhen you have something in mind, press enter to continue, or if you want a different prompt, type 1.");
-                //Console.Clear();
             }
             else
-            {break;
+            {
+                break;
             }
         }
-            
         Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
         BeginTimer();
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);
-        //gen.GenerateReflectPrompt();
         while (DateTime.Now < endTime)
         {
             gen.GenerateReflectQuestion();
