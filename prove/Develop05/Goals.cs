@@ -25,5 +25,10 @@ public class Goals
         _isComplete = false;
         return _isComplete;
     }
+
+    /*public abstract DisplayGoal()
+    {
+        Console.WriteLine("Check if Goal is complete.");
+    }*/
     
 }

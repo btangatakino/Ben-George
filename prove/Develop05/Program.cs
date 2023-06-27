@@ -31,6 +31,7 @@ class Program
             return userInput2;
         }
         string userInput = "";
+        //string userInput2 = "";
 
         while (userInput != "6")
         {
@@ -39,16 +40,14 @@ class Program
             {
                 case "1":
                     userInput = DisplayGoalMenu();
-                    
-
-                    /*if  (userInput`
-                    )= Console.ReadLine();*/
                     break;
 
                 case "2":
                     Console.Clear(); 
                     //create new goal
-                    Console.WriteLine("What type of goal would you want to create? ");               
+                    Console.WriteLine("What type of goal would you want to create? ");
+                    string userInput2 = Console.ReadLine();
+                                   
                     break;
 
                 case "3":
