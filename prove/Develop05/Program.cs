@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-class Program
+public class Program
 {
     static void Main(string[] args)
     {
@@ -20,7 +20,7 @@ class Program
             string userInput = Console.ReadLine();
             return userInput;
         }
-        static string DisplayGoalMenu()
+        /*static string DisplayGoalMenu()
         {
             Console.WriteLine("The type of Goals are:");
             Console.WriteLine("1. Simple Goal");
@@ -29,7 +29,7 @@ class Program
             Console.WriteLine("Which type of goal would you like to create? ");
             string userInput2 = Console.ReadLine();
             return userInput2;
-        }
+        }*/
         string userInput = "";
         //string userInput2 = "";
 
@@ -39,32 +39,27 @@ class Program
             switch (userInput)
             {
                 case "1":
-                    userInput = DisplayGoalMenu();
+                    CreateGoal();
                     break;
 
                 case "2":
-                    Console.Clear(); 
-                    //create new goal
-                    Console.WriteLine("What type of goal would you want to create? ");
-                    string userInput2 = Console.ReadLine();
-                                   
+                    DisplayGoal();          
                     break;
 
                 case "3":
-                    
+                    SaveGoal();                    
                     break;
 
                 case "4":
-                    
-                    
+                    LoadGoals();
                     break;
 
                 case "5":
-                    
+                    RecordEvent();
                     break;
                 
                 case "6":
-                    
+                    Console.WriteLine("Thank you!");
                     break;
 
                 default:
