@@ -18,8 +18,7 @@ public class Video
 
     public void Display()
     {
-        Console.Clear();
-        Console.WriteLine($"Title: {_title}, Author: {_author}, Duration(secs): {_lengthInSeconds}, Total Comments: {NumOfComments()}\n");
+        Console.WriteLine($"\nTitle: {_title}, Author: {_author}, Duration(secs): {_lengthInSeconds}, Total Comments: {NumOfComments()}");
         foreach(Comment comment in _comments)
         {
             comment.Display();
