@@ -58,7 +58,7 @@ class Program
 
         Comment v3Comment3 = new Comment();
         v3Comment3._nameOfPerson = "AltJGirl";
-        v3Comment3._comment = "One of my friends sang this in class before he passed away. I reminds me of him.";
+        v3Comment3._comment = "One of my friends sang this in class before he passed away. It reminds me of him.";
 
         video1._comments.Add(v1Comment1);
         video1._comments.Add(v1Comment2);
