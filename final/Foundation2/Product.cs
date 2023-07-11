@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-public class Products
+public class Product
 {
     private string _productName;
     private string _productId;
