@@ -9,9 +9,10 @@ public class Address
     private string _country;
     private bool _inUSA;
 
-    public void _InUSA()
+    public bool InUSA
     {
-
+        get {return _inUSA;}
+        set { _inUSA = value;}
     }
 
     public void DisplayAddress()
