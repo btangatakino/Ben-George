@@ -17,7 +17,7 @@ public class Address
 
     public void DisplayAddress()
     {
-        Console.WriteLine($"Address: {_street}, {_city}, {_state}, {_country}");
+        Console.WriteLine($"Address:\nStreet: {_street}\nCity: {_city}\nState: {_state}\nCountry: {_country}");
     }
 
 }
