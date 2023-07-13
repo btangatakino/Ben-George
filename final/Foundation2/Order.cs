@@ -9,6 +9,8 @@ public class Order
     public List<Product> _products = new List<Product>();
     public List<Customer> _customers = new List<Customer>();
 
+    public Order(){}
+
     public Order(double price, double totalPrice, double shippingCost)
     {
         _price = price;
