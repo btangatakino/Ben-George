@@ -11,7 +11,7 @@ public class Event
 
     public void StandardDetails()
     {
-        Console.WriteLine();
+        Console.WriteLine($"{_eventTitle} {_description} {_date} {_time} {_address}");
     }
 
     public void FullDetails()
