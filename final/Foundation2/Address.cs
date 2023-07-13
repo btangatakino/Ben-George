@@ -9,6 +9,14 @@ public class Address
     private string _country;
     private bool _inUSA;
 
+    public Address(string street, string city, string state, string country)
+    {
+        _street = street;
+        _city = city;
+        _state = state;
+        _country = country;
+    }
+
     public bool InUSA
     {
         get {return _inUSA;}
