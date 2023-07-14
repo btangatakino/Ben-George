@@ -16,7 +16,6 @@ public class Order
         _price = price;
         _totalPrice = totalPrice;
         _shippingCost = shippingCost;
-
     }
 
     public double TotalPrice()

@@ -19,6 +19,8 @@ public class Address
 
     public bool InUSA
     {
+        //if statement
+        
         get {return _inUSA;}
         set { _inUSA = value;}
     }

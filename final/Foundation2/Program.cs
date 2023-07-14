@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 class Program
 {
@@ -14,7 +15,9 @@ class Program
         order1.PackingLabel();
         order1.ShippingLabel();
         order1.TotalPrice();
-        //order1.DisplayAdress();
+        
+        Customer customer1 = new Customer();
+        customer1.GetAddress();
 
         Order order2 = new Order();
         order2.PackingLabel();

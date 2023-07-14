@@ -6,9 +6,17 @@ public class Customer
     private string _customerName;
     private Address _address;
 
-    public Address Address
+    public Address GetAddress()
     {
-        get{return _address;}
+        return _address;
+    }
+
+    public Customer(){}
+
+    public Customer(string customerName, Address address)
+    {
+        _customerName = customerName;
+        _address = address;
     }
 
     public void InUSA()
