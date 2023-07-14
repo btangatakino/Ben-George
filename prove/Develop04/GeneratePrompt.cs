@@ -48,8 +48,7 @@ public class GeneratePrompt : Activity
         }
         Console.Write(reflectQuestions[index]);
     }
-    public void GenerateReflectPrompt()
-    
+    public void GenerateReflectPrompt()    
     {
         int index2 = random.Next(reflectPrompts.Count);
         while (usedIndex2.Contains(index2));

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 public class Event
 {
-    private string _eventTitle;
-    private string _description;
-    private DateTime _date;
-    private string _time;
-    private string _address;
+    protected string _eventTitle;
+    protected string _description;
+    protected DateTime _date;
+    protected string _time;
+    protected string _address;
 
     public void StandardDetails()
     {

@@ -30,17 +30,7 @@ public class ListingActivity : Activity
         while (DateTime.Now < endTime)
         {
             Console.Write("> ");
-            string z = Console.ReadLine();
-            /*
-            string userFile = Console.ReadLine();
-            using (StreamWriter outputFile = new StreamWriter(filename))
-            {
-                foreach (Entry entry in _entries)
-                {
-                    outputFile.WriteLine($"{this._dateTimeEntry}, {this._response};
-                    _response = _response.Replace(",", "|");
-                }
-            }*/            
+            string z = Console.ReadLine();         
         }
         Spinner(5);
         DisplayEndMessage();
