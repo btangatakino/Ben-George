@@ -24,6 +24,12 @@ public class Order
         return _totalPrice;
     }
 
+    public double ShippingPrice()
+    {
+        //_shippingCost =
+        return _shippingCost;
+    }
+
     public void PackingLabel()
     {
         foreach(Product product in _products)
