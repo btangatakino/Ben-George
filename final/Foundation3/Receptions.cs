@@ -5,8 +5,8 @@ public class Receptions : Event
 {
     private string _rsvpEmail;
 
-    public Receptions()
+    public Receptions(string eventTitle, string description, string date, string time, string address, string rsvpEmail) : base(eventTitle, description, date, time, address)
     {
-        
+        _rsvpEmail = rsvpEmail;
     }
 }

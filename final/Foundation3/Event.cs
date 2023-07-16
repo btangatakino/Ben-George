@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 public class Event
 {
-    protected string _eventTitle;
-    protected string _description;
-    protected string _date;
-    protected string _time;
-    protected string _address;
-    protected string _eventType;
-    protected string _eventInfor;
+    private string _eventTitle;
+    private string _description;
+    private string _date;
+    private string _time;
+    private string _address;
+    private string _eventType;
+    private string _eventInfor;
 
     public Event(string eventTitle, string description, string date, string time, string address)
     {
