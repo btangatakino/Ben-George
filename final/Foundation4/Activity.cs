@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 public class Activity
 {
-    private dateType _date;
-    private double _time;
+    private string _date;
+    private double _duration;
     private double _length;
 
     private class dateType
@@ -22,6 +22,11 @@ public class Activity
     }
 
     public abstract Pace()
+    {
+
+    }
+
+    public abstract GetSummary()
     {
 
     }
