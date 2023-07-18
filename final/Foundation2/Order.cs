@@ -3,45 +3,46 @@ using System.Collections.Generic;
 
 public class Order
 {
-    private double _price;
-    private double _totalPrice;
-    private double _shippingCost;
-    public List<Product> _products = new List<Product>();
-    public List<Customer> _customers = new List<Customer>();
+    private List<Product> _products = new List<Product>()
+        {
+            new Product("Toaster", "TA0001", 42.00, 40),
+            new Product("Bicycle", "BE0005", 259.99, 20),
+            new Product("Smart Samsung Tv", "TE0001", 380, 10)
+        };
+    private  Customer _customer;
 
     public Order(){}
 
-    public Order(double price, double totalPrice, double shippingCost)
+    public Order(Customer customer)
     {
-        _price = price;
-        _totalPrice = totalPrice;
-        _shippingCost = shippingCost;
+        _customer = customer;
     }
+
+    /*public double ShippingPrice()
+    {
+        double _shippingCost = 
+        return _shippingCost;
+    }*/
 
     public double TotalPrice()
     {
-        _totalPrice = _price + _shippingCost;
-        return _totalPrice;
-    }
-
-    public double ShippingPrice()
-    {
-        //_shippingCost =
-        return _shippingCost;
-    }
+        double total = 0.0;
+        foreach (Product product in _products)
+        {
+            total += product.ComputeTotal();
+        }
+        return total;
+    }    
 
     public void PackingLabel()
     {
         foreach(Product product in _products)
         {
-            Console.WriteLine($"This is the product label");
+            Console.WriteLine($"");
         }
     }
     public void ShippingLabel()
     {
-        foreach(Customer customer in _customers)
-        {
-            Console.WriteLine($"This is the customer label");
-        }
+        Console.WriteLine("This is the shipping label");
     }
 }

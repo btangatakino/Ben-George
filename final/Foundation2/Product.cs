@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class Product
 {
-    private string _productName;
+    protected string _productName;
     private string _productId;
     private double _price;
     private int _quantity;
@@ -16,7 +16,13 @@ public class Product
         _quantity = quantity;
     }
 
-    public double Price()
+    public Product(string productName, string productId)
+    {
+        _productName = productName;
+        _productId = productId;
+    }
+
+    public double ComputeTotal()
     {
         _price = _price*_quantity;
         return _price;
