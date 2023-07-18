@@ -1,33 +1,27 @@
 using System;
 using System.Collections.Generic;
 
-public class Activity
+public abstract class Activity
 {
     private string _date;
-    private double _duration;
-    private double _length;
+    protected double _duration;
+    private string _activityType;
 
-    private class dateType
+    public Activity(string date, double duration, string activityType)
     {
+        _date = date;
+        _duration = duration;
+        _activityType = activityType;
     }
 
-    public abstract Distance()
+    public abstract double Distance();
+
+    public abstract double Speed();
+
+    public abstract double Pace();
+
+    public virtual void GetSummary()
     {
-
-    }
-
-    public abstract Speed()
-    {
-
-    }
-
-    public abstract Pace()
-    {
-
-    }
-
-    public abstract GetSummary()
-    {
-
+        Console.WriteLine(_date + " " + _activityType + "(" +_duration + ")-" + Distance() + " km, Speed: " + Speed() + " kph, Pace: " + Pace() + "min per km"); 
     }
 }
