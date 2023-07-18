@@ -9,4 +9,13 @@ public class Receptions : Event
     {
         _rsvpEmail = rsvpEmail;
     }
+
+    public string GetRsvpEmail()
+    {
+        return _rsvpEmail;
+    }
+    public void SetRsvpEmail(string rsvpEmail)
+    {
+        _rsvpEmail = rsvpEmail;
+    }
 }
