@@ -22,6 +22,7 @@ public abstract class Activity
 
     public virtual void GetSummary()
     {
-        Console.WriteLine(_date + " " + _activityType + "(" +_duration + ")-" + Distance() + " km, Speed: " + Speed() + " kph, Pace: " + Pace() + "min per km"); 
+        Console.WriteLine();
+        Console.WriteLine(_date + ", " + _activityType + "(" +_duration + "):" + Distance() + " km, Speed: " + Speed() + " kph, Pace: " + Pace() + " min per km"); 
     }
 }
