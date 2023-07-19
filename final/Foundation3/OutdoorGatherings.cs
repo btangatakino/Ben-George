@@ -5,18 +5,13 @@ public class OutdoorGatherings : Event
 {
     private string _weather;
 
-    public OutdoorGatherings(string eventTitle, string description, string date, string time, string address, string weather) : base(eventTitle, description, date, time, address)
+    public OutdoorGatherings(string eventTitle, string description, string date, string time, string address, string eventType, string eventInfor, string weather) : base(eventTitle, description, date, time, address, eventType, eventInfor)
     {
         _weather = weather;
     }
-
-    public string GetWeather()
+    public void DisplayInfor()
     {
-        return _weather;
-    }
-    public void SetWeather(string weather)
-    {
-        _weather = weather;
+        Console.WriteLine($"Weather:\t{_weather}");
     }
 
 }
