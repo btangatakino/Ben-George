@@ -6,8 +6,7 @@ public class Address
     private string _city;
     private string _state;
     private string _country;
-    private Address _address;
-
+    
     public Address(string city, string state, string country)
     {
         _city = city;
