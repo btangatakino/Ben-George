@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class Customer
 {
-    private string _customerName;
+    protected string _customerName;
     private Address _address;
 
     public Customer(){}
@@ -14,13 +14,22 @@ public class Customer
         _address = address;
     }
 
+    public string GetCustomerName()
+    {
+        return _customerName;
+    }
+    public void SetCustomerName(string customerName)
+    {
+        _customerName = customerName;
+    }
+ 
     public Address GetAddress()
     {
         return _address;
     }
 
-    public void InUSA()
+    public bool InUSA()
     {
-        InUSA();
+        return _address.InUSA();
     }
 }

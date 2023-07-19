@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class Product
 {
     protected string _productName;
-    private string _productId;
+    protected string _productId;
     private double _price;
     private int _quantity;
 
@@ -16,10 +16,20 @@ public class Product
         _quantity = quantity;
     }
 
-    public Product(string productName, string productId)
+    /*public Product(string productName, string productId)
     {
         _productName = productName;
         _productId = productId;
+    }*/
+
+    public string GetProductName()
+    {
+        return _productName;
+    }
+
+    public string GetProductID()
+    {
+        return _productId;
     }
 
     public double ComputeTotal()
