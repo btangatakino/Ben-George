@@ -92,16 +92,16 @@ public class Event
 
     public void StandardDetails()
     {
-        Console.WriteLine($"Event Title:\t{_eventTitle}\nDescription:\t{_description}\nDate:\t\t{_date}\nTime:\t\t{_time}\nAddress:\t{_address}");
+        Console.WriteLine($"*****Standard Details*****\nEvent Title:\t{_eventTitle}\nDescription:\t{_description}\nDate:\t\t{_date}\nTime:\t\t{_time}\nAddress:\t{_address}");
     }
 
     public void FullDetails()
     {
-        Console.WriteLine($"Event Title:\t{_eventTitle}\nDescription:\t{_description}\nDate:\t\t{_date}\nTime:\t\t{_time}\nAddress:\t{_address}\nEvent Type:\t{_eventType}\nEventInfor:\t{_eventInfor}");
+        Console.WriteLine($"*****Full Details*****\nEvent Title:\t{_eventTitle}\nDescription:\t{_description}\nDate:\t\t{_date}\nTime:\t\t{_time}\nAddress:\t{_address}\nEvent Type:\t{_eventType}\nEventInfor:\t{_eventInfor}");
     }
 
     public void ShortDescription()
     {
-        Console.WriteLine($"Event Type:\t{_eventType}\nEvent Title:\t{_eventTitle}\nDate:\t\t{_date}");
+        Console.WriteLine($"*****Short Description*****\nEvent Type:\t{_eventType}\nEvent Title:\t{_eventTitle}\nDate:\t\t{_date}");
     }
 }

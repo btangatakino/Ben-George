@@ -8,7 +8,7 @@ public class Lectures : Event
 
     public Lectures(){}
 
-    public Lectures(string eventTitle, string description, string date, string time, string address, string lecturer, int capacity) : base(eventTitle, description, date, time, address)
+    public Lectures(string eventTitle, string description, string date, string time, string address, string lecturer, int capacity, string eventType, string eventInfor) : base(eventTitle, description, date, time, address, eventInfor, eventType)
     {
         _lecturer = lecturer;
         _capacity = capacity;
@@ -18,7 +18,7 @@ public class Lectures : Event
     {
         return _lecturer;
     }
-    /*public void SetLecturer(string lecturer)
+    public void SetLecturer(string lecturer)
     {
         _lecturer = lecturer;
     }
@@ -29,10 +29,15 @@ public class Lectures : Event
     public void SetCapacity(int capacity)
     {
         _capacity = capacity;
-    }*/
+    }
+
     public void SetInfor(string lecture, int capacity)
     {
         _lecturer = lecture;
         _capacity = capacity;
+    }
+    public void DisplayInfor()
+    {
+        Console.WriteLine($"Lecturer:\t{_lecturer}\nInformation:\tCapacity of {_capacity}");
     }
 }

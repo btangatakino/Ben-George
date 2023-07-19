@@ -18,6 +18,6 @@ public class Address
 
     public string DisplayAddress(string city, string state, string country)
     {
-        return($"{_city}, {_state}, {_country}");
+        return($"{_city} {_state} {_country}");
     }
 }
