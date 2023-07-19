@@ -16,8 +16,6 @@ public class Goals
 
         Console.WriteLine($"What is a short description of your Goal? ");
         _description = Console.ReadLine();
-
-        
     }
 
     public Goals(string goalName, string description, int points)
